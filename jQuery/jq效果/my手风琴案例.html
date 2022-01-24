@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery.js"></script>
+
+    <style>
+        li {
+            position: relative;
+            list-style: none;
+            width: 69px;
+            height: 69px;
+            float: left;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+        
+        ul {
+            width: 900px;
+        }
+        
+        .small {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 69px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li>
+                <a href=""> <img src="https://game.gtimg.cn/images/yxzj/img201606/heroimg/106/106.jpg" alt="" class="small">
+                    <img src="https://game.gtimg.cn/images/yxzj/img201606/heroimg/106/106-freehover.png" alt="" class="big"></a>
+            </li>
+            <li>
+                <a href=""> <img src="https://game.gtimg.cn/images/yxzj/img201606/heroimg/106/106.jpg" alt="" class="small">
+                    <img src="https://game.gtimg.cn/images/yxzj/img201606/heroimg/106/106-freehover.png" alt="" class="big"></a>
+            </li>
+            <li>
+                <a href=""> <img src="https://game.gtimg.cn/images/yxzj/img201606/heroimg/106/106.jpg" alt="" class="small">
+                    <img src="https://game.gtimg.cn/images/yxzj/img201606/heroimg/106/106-freehover.png" alt="" class="big"></a>
+            </li>
+            <li>
+                <a href=""> <img src="https://game.gtimg.cn/images/yxzj/img201606/heroimg/106/106.jpg" alt="" class="small">
+                    <img src="https://game.gtimg.cn/images/yxzj/img201606/heroimg/106/106-freehover.png" alt="" class="big"></a>
+            </li>
+            <li>
+                <a href=""> <img src="https://game.gtimg.cn/images/yxzj/img201606/heroimg/106/106.jpg" alt="" class="small">
+                    <img src="https://game.gtimg.cn/images/yxzj/img201606/heroimg/106/106-freehover.png" alt="" class="big"></a>
+            </li>
+            <li>
+                <a href=""> <img src="https://game.gtimg.cn/images/yxzj/img201606/heroimg/106/106.jpg" alt="" class="small">
+                    <img src="https://game.gtimg.cn/images/yxzj/img201606/heroimg/106/106-freehover.png" alt="" class="big"></a>
+            </li>
+            <li>
+                <a href=""> <img src="https://game.gtimg.cn/images/yxzj/img201606/heroimg/106/106.jpg" alt="" class="small">
+                    <img src="https://game.gtimg.cn/images/yxzj/img201606/heroimg/106/106-freehover.png" alt="" class="big"></a>
+            </li>
+            <li>
+                <a href=""> <img src="https://game.gtimg.cn/images/yxzj/img201606/heroimg/106/106.jpg" alt="" class="small">
+                    <img src="https://game.gtimg.cn/images/yxzj/img201606/heroimg/106/106-freehover.png" alt="" class="big"></a>
+            </li>
+            <li>
+                <a href=""> <img src="https://game.gtimg.cn/images/yxzj/img201606/heroimg/106/106.jpg" alt="" class="small">
+                    <img src="https://game.gtimg.cn/images/yxzj/img201606/heroimg/106/106-freehover.png" alt="" class="big"></a>
+            </li>
+
+        </ul>
+    </div>
+    <script>
+        $('ul li').hover(function() {
+                $(this).stop().animate({
+                    width: 224
+                }).find('.small').fadeOut().find('.big').fadeIn();
+
+                $(this).siblings().stop().animate({
+                    width: 69
+                }).find('.small').fadeIn().find('.big').fadeOut();
+            },
+
+            function() {})
+    </script>
+</body>
+
+</html>

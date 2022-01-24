@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .yc {
+            position: absolute;
+            display: none;
+            /* visibility: hidden; */
+            top: 0px;
+            left: 85px;
+            /* border: 1px solid red; */
+            font-size: 20px;
+        }
+        
+        .sear {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sear">
+        <span>快递公司：</span>
+        <select name="" id=""> <option value="">1</option>
+            <option value="">1</option>
+            <option value="">1</option>
+            <option value="">1</option></select>
+        <br />
+        <input type="text" name="" id="" class="yc">
+        <span>快递单号：</span>
+        <input type="text" name="" id="" class="zs">
+
+        <script>
+            var zsin = document.querySelector('.zs')
+            var yc = document.querySelector('.yc')
+            zsin.addEventListener('keyup', function(e) {
+                // console.log('输入')
+                console.log(yc)
+                yc.style.display = 'block'
+                yc.value = this.value
+                this.value == '' ? yc.style.display = 'none' : 0
+            })
+
+            zsin.addEventListener('blur', function() {
+                yc.style.display = 'none'
+            })
+            zsin.addEventListener('focus', function() {
+                this.value != '' ? yc.style.display = 'block' : 0
+            })
+        </script>
+    </div>
+</body>
+
+</html>

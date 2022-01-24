@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/animate.js"></script>
+    <style>
+        div {
+            position: relative;
+            left: 0;
+            height: 200px;
+            width: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="o">600</button>
+    <button class="t">300</button>
+    <div></div>
+    <script>
+        var fl = 1
+        var div = document.querySelector('div')
+        var b1 = document.querySelector('.o')
+        var b2 = document.querySelector('.t')
+        b1.addEventListener('click', function() {
+            if (fl) {
+                fl = 0
+                animate(div, 600, function() {
+                    fl = 1
+                })
+            }
+        })
+        b2.addEventListener('click', function() {
+            if (fl) {
+                fl = 0
+                animate(div, 300, function() {
+                    fl = 1
+                })
+            }
+        })
+    </script>
+</body>
+
+</html>

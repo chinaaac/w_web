@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/bootstrap.css">
+    <script src="./lib/jquery.js"></script>
+</head>
+
+<body style="padding:15px">
+    <!-- 评论面板 -->
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">发表评论</h3>
+        </div>
+        <form class="panel-body" id='f1'>
+            <p>评论人:</p>
+            <input type="text" name="username" id="username" class="form-control">
+            <p>评论内容：</p>
+            <input type="text" name="content" id="content" class="form-control">
+            <button type="submit" class="btn btn-primary fb">发表评论</button>
+        </form>
+    </div>
+    <!-- 评论列表 -->
+
+    <ul class="list-group">
+        <li class="list-group-item">
+
+            <span class="badge" style='background-color: #f0ad4e;'>时间：</span>
+            <span class=" badge " style="background-color: #5bc0de;">评论人：</span> Item 1
+        </li>
+
+    </ul>
+
+    <script>
+        $(function() {
+
+            getnr()
+
+            // $('.fb').on('click', function(e) {
+            //     e.preventDefault()
+            //     postnr()
+            //     getnr()
+            // })
+
+            $('#f1').on('submit', function(e) {
+                e.preventDefault()
+                var data = $(this).serialize()
+                console.log(data)
+                console.log(typeof data)
+                postnr(data)
+                getnr()
+            })
+
+            function getnr() {
+
+                var nr = []
+                $.ajax({
+                    type: 'get',
+                    url: 'http://www.liulongbin.top:3006/api/cmtlist',
+                    success: function(res) {
+                        console.log(res)
+                        if (res.status != 200) return alert(res.msg)
+
+                        $.each(res.data, function(k, v) {
+
+                            nr.push(`<li class="list-group-item">
+
+<span class="badge" style='background-color: #f0ad4e;'>时间：${v.time}</span>
+<span class=" badge " style="background-color: #5bc0de;">评论人：${v.username}</span> ${v.content}
+</li>`)
+                            $('.list-group').empty().append(nr)
+                        })
+                    }
+                })
+            }
+
+            function postnr(data) {
+
+                $.ajax({
+                    type: 'post',
+                    url: 'http://www.liulongbin.top:3006/api/addcmt',
+                    data: data,
+                    success: function(res) {
+                        if (res.status != 201) return alert(res.msg)
+                        $('#f1')[0].reset()
+                    }
+                })
+            }
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/animate.js"></script>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0 auto;
+            width: 1200px;
+        }
+        
+        li {
+            list-style-type: none;
+            float: left;
+            /* background-color: green; */
+        }
+        
+        .foucs {
+            overflow: hidden;
+            position: relative;
+            width: 600px;
+            height: 400px;
+        }
+        
+        ul {
+            position: relative;
+            overflow: hidden;
+            width: 500%;
+            padding: 0;
+            margin: 0;
+            /* background-color: green; */
+        }
+        
+        img {
+            width: 600px;
+            height: 380px;
+        }
+        
+        .foucs div {
+            text-align: center;
+            color: red;
+        }
+        
+        .z,
+        .y {
+            display: none;
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, .2);
+            padding: 5px;
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .z {
+            left: 0;
+        }
+        
+        .y {
+            right: 0
+        }
+        
+        .red {
+            background-color: red;
+        }
+        
+        ol>li {
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            background-color: green;
+            margin: 5px;
+        }
+        
+        ol {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="foucs">
+        <a href="javascript:;" class="z">&lt;</a>
+        <a href="javascript:;" class="y">&gt;</a>
+        <ul>
+            <li>
+                <a href="#"><img src="images/loginbg.png" alt=""></a>
+                <div>1</div>
+            </li>
+            <li>
+                <a href="#"><img src="images/loginbg.png" alt=""></a>
+                <div>2</div>
+            </li>
+            <li>
+                <a href="#"><img src="images/loginbg.png" alt=""></a>
+                <div>3</div>
+            </li>
+            <li>
+                <a href="#"><img src="images/loginbg.png" alt=""></a>
+                <div>4</div>
+            </li>
+        </ul>
+        <ol></ol>
+        <script>
+            var z = document.querySelector('.z')
+            var y = document.querySelector('.y')
+            var ul = document.querySelector('ul')
+            var ol = document.querySelector('ol')
+            var ulen = ul.children.length
+            var fo = document.querySelector('.foucs')
+            var fw = fo.offsetWidth
+            var yn = 0
+            var tn = 0
+            ul.addEventListener
+
+            for (var i = 0; i < ulen; i++) {
+                var li = document.createElement('li')
+                li.setAttribute('index', i)
+                ol.appendChild(li)
+                li.addEventListener('click', function() {
+                    for (var i = 0; i < ulen; i++) {
+                        ol.children[i].className = ''
+                    }
+                    this.className = 'red'
+                    var index = this.getAttribute('index')
+                    animate(ul, -index * fw)
+                    tn = yn = index
+                })
+            }
+            var clone = ul.children[0].cloneNode(1)
+            ul.appendChild(clone)
+            ol.children[0].className = 'red'
+            var fl = 1
+            y.addEventListener('click', function() {
+                if (fl) {
+                    fl = 0
+                    if (yn == ulen) {
+                        yn = 0
+                        ul.style.left = 0
+                    }
+
+                    yn++
+                    tn++
+                    animate(ul, -yn * fw, function() {
+                        fl = 1
+
+                    })
+                    for (var i = 0; i < ulen; i++)
+                        ol.children[i].className = ''
+
+                    tn == ulen ? tn = 0 : 0
+                    console.log(tn)
+                    ol.children[tn].className = 'red'
+                }
+            })
+
+            z.addEventListener('click', function() {
+                if (fl) {
+                    fl = 0
+                    if (yn == 0) {
+                        yn = ulen
+                        ul.style.left = -yn * fw + 'px'
+                    }
+
+                    yn--
+                    tn--
+                    animate(ul, -yn * fw, function() {
+                        fl = 1
+                    })
+                    for (var i = 0; i < ulen; i++)
+                        ol.children[i].className = ''
+                    console.log(tn)
+                    tn < 0 ? tn = ulen - 1 : 0
+                    ol.children[tn].className = 'red'
+                }
+            })
+
+            var t = setInterval(() => {
+                y.click();
+            }, 2000);
+            fo.addEventListener('mouseenter', function() {
+                z.style.display = 'block'
+                y.style.display = 'block'
+
+
+                clearInterval(t)
+
+                t = null
+            })
+            fo.addEventListener('mouseleave', function() {
+                z.style.display = 'none'
+                y.style.display = 'none'
+
+                t = setInterval(() => {
+                    y.click();
+                }, 2000);
+            })
+        </script>
+    </div>
+</body>
+
+</html>

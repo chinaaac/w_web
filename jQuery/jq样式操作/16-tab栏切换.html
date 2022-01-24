@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        li {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 0 10px;
+        }
+        
+        .mct {
+            width: 80%;
+            height: 40px;
+            background-color: rgb(175, 175, 175);
+            margin: 0 auto;
+            line-height: 40px;
+        }
+        
+        .mcm {
+            width: 80%;
+            margin: 0 auto;
+        }
+        
+        .mct ul li {
+            float: left;
+        }
+        
+        ul {
+            padding: 0;
+        }
+        /* li:hover {
+          
+        }
+         */
+        
+        .cruut {
+            background-color: red;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="m_c">
+        <div class="mct">
+            <ul>
+                <li>
+                    <a href="#">商品介绍</a>
+                </li>
+                <li>
+                    <a href="#">规格与包装</a>
+                </li>
+                <li>
+                    <a href="#">售后保障</a>
+                </li>
+                <li>
+                    <a href="#">商品评价（5000)</a>
+                </li>
+                <li>
+                    <a href="#">手机社区</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mcm">
+            <ul>
+                <li>分辨率：1920*1080(FHD)1
+                </li>
+                <li>后置摄像头：1200万像素</li>
+                <li>前置摄像头：500万像素</li>
+                <li>核 数：其他</li>
+                <li>频 率：以官网信息为准</li>
+                <li>品牌： Apple ♥关注</li>
+                <li>商品名称：APPLEiPhone 6s Plus </li>
+                <li>商品编号：1861098</li>
+                <li>商品毛重：0.51kg</li>
+                <li>商品产地：中国大陆</li>
+                <li>热点：指纹识别，Apple Pay，金属机身，拍照神器</li>
+                <li>系统：苹果（IOS）</li>
+                <li>像素：1000-1600万</li>
+                <li>机身内存：64GB<span>查看更多参数</span></li>
+            </ul>
+            <ul>
+                <li>分辨率：1920*1080(FHD)2
+                </li>
+                <li>后置摄像头：1200万像素</li>
+                <li>前置摄像头：500万像素</li>
+                <li>核 数：其他</li>
+                <li>频 率：以官网信息为准</li>
+                <li>品牌： Apple ♥关注</li>
+                <li>商品名称：APPLEiPhone 6s Plus </li>
+                <li>商品编号：1861098</li>
+                <li>商品毛重：0.51kg</li>
+                <li>商品产地：中国大陆</li>
+                <li>热点：指纹识别，Apple Pay，金属机身，拍照神器</li>
+                <li>系统：苹果（IOS）</li>
+                <li>像素：1000-1600万</li>
+                <li>机身内存：64GB<span>查看更多参数</span></li>
+            </ul>
+            <ul>
+                <li>分辨率：1920*1080(FHD)3
+                </li>
+                <li>后置摄像头：1200万像素</li>
+                <li>前置摄像头：500万像素</li>
+                <li>核 数：其他</li>
+                <li>频 率：以官网信息为准</li>
+                <li>品牌： Apple ♥关注</li>
+                <li>商品名称：APPLEiPhone 6s Plus </li>
+                <li>商品编号：1861098</li>
+                <li>商品毛重：0.51kg</li>
+                <li>商品产地：中国大陆</li>
+                <li>热点：指纹识别，Apple Pay，金属机身，拍照神器</li>
+                <li>系统：苹果（IOS）</li>
+                <li>像素：1000-1600万</li>
+                <li>机身内存：64GB<span>查看更多参数</span></li>
+            </ul>
+            <ul>
+                <li>分辨率：1920*1080(FHD)4
+                </li>
+                <li>后置摄像头：1200万像素</li>
+                <li>前置摄像头：500万像素</li>
+                <li>核 数：其他</li>
+                <li>频 率：以官网信息为准</li>
+                <li>品牌： Apple ♥关注</li>
+                <li>商品名称：APPLEiPhone 6s Plus </li>
+                <li>商品编号：1861098</li>
+                <li>商品毛重：0.51kg</li>
+                <li>商品产地：中国大陆</li>
+                <li>热点：指纹识别，Apple Pay，金属机身，拍照神器</li>
+                <li>系统：苹果（IOS）</li>
+                <li>像素：1000-1600万</li>
+                <li>机身内存：64GB<span>查看更多参数</span></li>
+            </ul>
+        </div>
+        <script src="../jquery.js"></script>
+        <script>
+            $(function() {
+                $('.mcm ul').eq(0).show().siblings().hide()
+                $('.mct li:first').addClass('cruut').siblings().removeClass('cruut')
+                $('.mct li').click(function() {
+                    $(this).addClass('cruut').siblings().removeClass('cruut')
+                    var index = $(this).index()
+
+
+                    $('.mcm ul').eq(index).show().siblings().hide()
+                })
+
+
+
+            })
+        </script>
+</body>
+
+</html>

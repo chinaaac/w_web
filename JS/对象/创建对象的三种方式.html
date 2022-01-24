@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1字面量创建
+        //2new object
+        //3构造函数
+
+
+        //1字面量创建
+        var obj = {
+            un: 'cl',
+            age: 10,
+            eat() {
+                console.log('我在吃饭')
+                return 1;
+            },
+            sayHi: function() {
+                console.log('hi')
+            }
+        }
+        console.log(obj.age)
+        console.log(obj['un'])
+        console.log(obj.eat())
+        console.log(obj.sayHi())
+
+        //2new object
+        var o2 = new Object();
+        o2.un = 'cc';
+        o2.age = 18;
+        o2.sex = 'man';
+        o2.sayHello = function() {
+            console.log('hello');
+        }
+
+        console.log(o2.un)
+        o2.sayHello()
+
+
+        //3构造函数
+
+        function Star(un, age, sex) {
+            this.name = un;
+            this.age = age;
+            this.sex = sex
+            this.sing = function(sang) {
+                console.log(sang + 1);
+            }
+
+        }
+        var ldh = new Star('刘德华', 18, 'man')
+        console.log(ldh.name)
+        ldh.sing('17');
+        console.log(ldh)
+        console.log(typeof(ldh))
+    </script>
+</body>
+
+</html>

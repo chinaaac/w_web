@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>传统</button>
+    <button>监听</button>
+    <button>attachEvent</button>
+    <script>
+        var btns = document.querySelectorAll('button')
+        btns[0].onclick = function() {
+            alert('hi')
+        }
+        btns[0].onclick = function() {
+            alert('hi222')
+        }
+
+        btns[1].addEventListener('click', function() {
+            alert('this listen')
+        })
+        btns[1].addEventListener('click', function() {
+            alert('this llll')
+        })
+        btns[2].attachEvent('onclick', function() {
+                alert(this.innerHtml)
+            }) //ie9之前才能正确识别
+    </script>
+</body>
+
+</html>

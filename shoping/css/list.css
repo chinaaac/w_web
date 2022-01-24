@@ -1,0 +1,124 @@
+        .ks {
+            position: absolute;
+            top: 40px;
+            left: 190px;
+            font-size: 30px;
+            color: red;
+            border-left: 1px solid #c81523;
+            padding: 3px 0 0 14px;
+        }
+        
+        .nav {
+            overflow: hidden;
+        }
+        
+        .sk_list {
+            float: left;
+        }
+        
+        .sk_list ul li {
+            float: left;
+        }
+        
+        .sk_con ul li {
+            float: left;
+        }
+        
+        .sk_list ul li a {
+            display: block;
+            line-height: 47px;
+            padding: 0 30px;
+            font-size: 16px;
+            color: #000;
+            font-weight: 700;
+        }
+        
+        .sk_con {
+            float: left;
+        }
+        
+        .sk_con ul li a {
+            display: block;
+            line-height: 49px;
+            padding: 0 20px;
+            font-size: 14px;
+        }
+        
+        .sk_con ul li:last-child a::after {
+            content: '^';
+        }
+        
+        .sk_container {}
+        
+        .sk_hd {
+            background-color: teal;
+            height: 100px;
+        }
+        
+        .sk_bd ul li {
+            position: relative;
+            margin-right: 13px;
+            overflow: hidden;
+            height: 460px;
+            width: 290px;
+            float: left;
+            border: 1px solid transparent;
+        }
+        
+        .sk_bd ul li:hover {
+            border: 1px solid blue;
+        }
+        
+        .sk_bd ul li img {
+            height: 70%;
+            width: 290px;
+        }
+        
+        .sk_bd ul li p {
+            color: gray;
+            font-size: 14px;
+        }
+        
+        .xj {
+            font-size: 18px;
+            font-weight: 700;
+            color: red;
+            float: left;
+        }
+        
+        .yj {
+            float: left;
+            line-height: 28px;
+            margin-left: 10px;
+        }
+        
+        .jd {
+            text-align: center;
+            clear: both;
+        }
+        
+        .jdt {
+            height: 10px;
+            width: 80%;
+            border: 1px solid red;
+            border-radius: 5px;
+        }
+        
+        .sk_bd a {
+            text-align: center;
+            display: block;
+            height: 40px;
+            width: 100%;
+            background-color: red;
+            line-height: 40px;
+            position: absolute;
+            bottom: 0;
+        }
+        
+        .sk_bd li:nth-child(4n) {
+            margin-right: 0px;
+        }
+        
+        .sk_bd ul {
+            overflow: hidden;
+        }

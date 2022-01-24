@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 10000px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        //鼠标事件对象 MouseEvent
+        document.addEventListener('click', function(e) {
+            console.log(e)
+                //获取可视区域的坐标，滚动屏幕数值不变化
+            console.log(e.clientX + " " + e.clientY)
+                //获取整块屏幕的物理坐标
+            console.log(e.screenX + " " + e.screenY)
+
+            //获取整个网页的定位，滚动数值变化
+            console.log(e.pageX + " " + e.pageY)
+                // console.log(e.layerX + " " + e.layerY)
+        })
+    </script>
+</body>
+
+</html>

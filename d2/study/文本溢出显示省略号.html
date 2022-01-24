@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 150px;
+            height: 80px;
+            background-color: pink;
+            margin: 100px auto;
+            word-spacing:nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .hello {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            word-spacing:normal;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        aafasssssssssssssssssssssssssssssssssssssssssssssss
+    </div>
+    <div class="hello">
+        aafasssssssssssssssssssssssssssssssssssssssssssssss
+    </div>
+</body>
+</html>

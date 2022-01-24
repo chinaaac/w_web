@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = ['one', 'two', 'three']
+        console.log(arr)
+        console.log(arr.length)
+        arr.length = 10
+        arr.push('four')
+        arr[30] = 'helo'
+        console.log(arr)
+
+        a1 = [1, 2, 3, 4, 5, 6, 7, 8]
+        newa1 = []
+
+        var j = 0
+            // for (var i = 0; i < a1.length; i++) {
+            //     if (a1[i] > 3) {
+            //         newa1[j] = a1[i]
+            //         j++
+            //     }
+            // }
+
+        for (var i = 0; i < a1.length; i++) {
+            if (a1[i] > 3) {
+                newa1[newa1.length] = a1[i]
+                j++
+            }
+        }
+        console.log(newa1)
+    </script>
+</body>
+
+</html>

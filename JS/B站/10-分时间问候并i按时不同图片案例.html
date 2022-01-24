@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="../../img/nrk.png" alt="">
+    <div>上午好</div>
+    <script>
+        var img = document.querySelector('img')
+        var div = document.querySelector('div')
+        var time = new Date()
+        var h = time.getHours();
+        // h = 15
+        if (h < 12) {
+            img.src = "../../img/nrk.png";
+            div.innerHTML = '早上好'
+        } else if (h < 18) {
+            img.src = "../../img/wg.png"
+            div.innerHTML = '下午好'
+        } else {
+            img.src = "../../img/index.png"
+            div.innerHTML = '晚上好'
+        }
+        console.log(h)
+    </script>
+</body>
+
+</html>

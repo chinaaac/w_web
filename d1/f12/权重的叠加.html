@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 复合 选择器有权重叠加的问题*/
+        ul li {
+            color: green;
+        }
+
+        li {
+            color: red;
+        }
+
+        .nav li {
+            color: hotpink;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li>猪肉</li>
+        <li>牛肉</li>
+        <li>鸡肉</li>
+    </ul>
+</body>
+</html>

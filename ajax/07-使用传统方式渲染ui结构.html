@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/bootstrap.css">
+    <script src="./lib/jquery.js"></script>
+</head>
+
+<body>
+    <div id="title"></div>
+    <div>姓名：<span id='name'></span></div>
+    <div>年龄: <span id="age"></span></div>
+    <div>会员：<span id='isvip'></span></div>
+    <div>注册时间：<span id='regtime'></span></div>
+    <div>爱好：
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <script>
+        $(function() {
+            data = {
+                title: '<h3>用户信息</h3>',
+                name: 'cc',
+                age: 30,
+                isvip: true,
+                regtime: new Date(),
+                hobby: ['eat', 'sleep', 'sports']
+            }
+            $('#title').html(data.title)
+            $('#name').html(data.name)
+        })
+    </script>
+</body>
+
+</html>

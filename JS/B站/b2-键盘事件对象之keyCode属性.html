@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //'keyup' 不区分大小写
+        document.addEventListener('keyup', function(e) {
+            console.log(e.key)
+            console.log(e.keyCode)
+        })
+
+        //keypress区分大小写
+        document.addEventListener('keypress', function(e) {
+            console.log(e.key)
+            console.log(e.keyCode)
+            e.keyCode == '65' ? alert('你按了A') : 0
+        })
+    </script>
+
+</body>
+
+</html>

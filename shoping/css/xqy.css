@@ -1,0 +1,446 @@
+.dd {
+    display: none;
+}
+
+.jg {
+    margin-top: 28px;
+    margin-bottom: 5px;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.a1 {
+    overflow: hidden;
+}
+
+.cpt {
+    position: relative;
+    float: left;
+    height: 560px;
+    width: 400px;
+}
+
+.imgbox {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    width: 90%;
+    height: 20%;
+    text-align: center;
+}
+
+.imgbox::before {
+    content: '<';
+    /* font-size: 30px; */
+}
+
+.imgbox::after {
+    content: ">";
+}
+
+.nrt {
+    width: 100%;
+    height: 80%;
+    border: 1px solid #ccc;
+}
+
+.xz {
+    float: right;
+    height: 560px;
+    width: 800px;
+    padding-left: 20px;
+}
+
+.cpt p {
+    position: absolute;
+    bottom: 0;
+    color: black;
+}
+
+.cpt p span {
+    color: black;
+    margin-left: 30px;
+}
+
+.cpt p input {
+    margin-left: 80px;
+}
+
+.h3 {
+    color: black;
+    font-size: 20px;
+}
+
+.ztnr h4 {
+    color: #c81623;
+    font-size: 8px;
+    font-weight: normal;
+    margin: 10px auto;
+}
+
+.ps {
+    padding-left: 7px;
+    padding-top: 8px;
+    height: 115px;
+    width: 720px;
+    background-color: #fee9eb;
+}
+
+.ps span {
+    font-size: 20px;
+    color: #c81623;
+}
+
+.ps em {
+    color: #c81623;
+    padding-left: 5px;
+}
+
+.ps p:last-child em {
+    margin-left: 5px;
+    background-color: #c81623;
+    color: white;
+    margin-left: 10px;
+}
+
+.ps p:last-child span {
+    font-size: 15px;
+    color: #999999;
+    margin-left: 0;
+}
+
+.psx {
+    padding-left: 7px;
+    padding-top: 12px;
+    border-bottom: 1px solid #ccc;
+}
+
+.ztnr span {
+    margin-left: 15px;
+}
+
+.ztnr p {
+    color: black;
+    line-height: 30px;
+}
+
+.ztnr .deh {
+    margin-left: 60px;
+}
+
+.ztnr ul li {
+    margin-left: 8px;
+    margin: 5px auto;
+}
+
+.ztnr label {
+    color: black;
+}
+
+.ztnr ul {
+    margin-top: 10px;
+}
+
+.ztnr ul li a {
+    display: inline-block;
+    height: 38px;
+    width: 82px;
+    line-height: 38px;
+    background-color: #f7f7f7;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.ztnr ul li a:hover {
+    border: 1px solid #c81623;
+}
+
+.ztnr ul li a:nth-of-type(1) {
+    border: 1px solid #c81623;
+}
+
+li input {
+    width: 50px;
+    height: 50px;
+    outline: solid #ccc;
+}
+
+.ztnr ul li:last-child a {
+    height: 50px;
+    width: 150px;
+    background-color: #c81623;
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+    line-height: 50px;
+}
+
+.xxnr {
+    clear: both;
+    margin-top: 20px;
+}
+
+.bigbox {
+    overflow: hidden;
+}
+
+.side {
+    float: left;
+    height: 1700px;
+    width: 210px;
+    border: 1px solid #ccc;
+}
+
+.aa {
+    font-size: 0;
+}
+
+.aa>a {
+    display: inline-block;
+    height: 35px;
+    width: 104px;
+    background-color: white;
+    font-size: 14px;
+    text-align: center;
+    line-height: 35px;
+    color: black;
+    border-width: 80%;
+}
+
+.aa>a:last-child {
+    background-color: #ccc;
+}
+
+.side>a:last-child {
+    background-color: #f1f1f1;
+}
+
+.side ul {
+    font-size: 0;
+}
+
+.side ul li a {
+    display: inline-block;
+    width: 104px;
+    height: 30px;
+    font-size: 14px;
+    color: #7d7d7d;
+    line-height: 30px;
+    padding-left: 20px;
+    border-bottom: dotted 1px #333333;
+}
+
+.side>p {
+    font-size: 15px;
+    margin: 5px 10px;
+}
+
+.tjgm {
+    position: relative;
+    height: 240px;
+    width: 210px;
+    border-top: 1px solid #ccc;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.tjgm img {
+    width: 99%;
+    height: 130px;
+}
+
+.tjgm>p {
+    line-height: 30px;
+    margin: auto 10px;
+}
+
+.tjgm p:last-of-type {
+    font-weight: bold;
+}
+
+.tjgm>a {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 30px;
+    width: 100px;
+    background-color: #ccc;
+    text-align: center;
+    line-height: 30px;
+    color: black;
+}
+
+.main {
+    float: left;
+    width: 980px;
+    height: 1600px;
+    /* background-color: teal; */
+    margin-left: 10px;
+}
+
+.m_t {
+    height: 35px;
+    background-color: #ccc;
+}
+
+.m_t a {
+    display: block;
+    width: 90px;
+    height: 100%;
+    color: white;
+    background-color: #c81623;
+    text-align: center;
+    line-height: 35px;
+}
+
+.m_m_l {
+    float: left;
+    width: 80%;
+    height: 265px;
+    padding: 10px 10px;
+    border: solid 1px #ccc;
+}
+
+.m_m_r {
+    position: relative;
+    float: left;
+    width: 20%;
+    height: 265px;
+    border: solid 1px #ccc;
+    padding-top: 45px;
+    padding-left: 15px;
+}
+
+.m_m_l ul li {
+    float: left;
+}
+
+.m_m_l ul li a {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.m_m_l img {
+    width: 101%;
+    height: 230px;
+}
+
+.m_m_r p {
+    line-height: 2;
+    color: black;
+}
+
+.m_m_r p:last-of-type {
+    color: red;
+    font-size: 20px;
+}
+
+.m_m_r>a {
+    position: absolute;
+    bottom: 50px;
+    display: block;
+    width: 140px;
+    height: 45px;
+    background-color: red;
+    text-align: center;
+    line-height: 45px;
+    color: white;
+    font-weight: bold;
+}
+
+.m_c {
+    clear: both;
+    margin-top: 20px;
+}
+
+.mct {
+    height: 35px;
+    background-color: #ccc;
+}
+
+.clearfixed {
+    clear: both;
+}
+
+.mct ul li {
+    float: left;
+}
+
+.mct ul li a {
+    display: inline-block;
+    padding: 0 20px;
+    line-height: 35px;
+}
+
+.mct ul li:first-child a {
+    background-color: red;
+    color: white;
+}
+
+.mcm {
+    position: relative;
+    margin: 25px;
+}
+
+.mcm ul li {
+    line-height: 1.8;
+}
+
+.mcm span {
+    position: absolute;
+    right: 0;
+    color: black;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.mask {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background-color: #fede4f;
+    opacity: .5;
+    cursor: move;
+}
+
+.big {
+    display: none;
+    position: absolute;
+    left: 410px;
+    top: 0;
+    width: 500px;
+    height: 500px;
+    background-color: pink;
+    overflow: hidden;
+    border: 1px solid red;
+}
+
+.big img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.pic {
+    height: 994px;
+    width: 100%;
+    background-color: teal;
+}
+
+.bbt {
+    margin: 20px 0;
+    float: left;
+    height: 335px;
+    width: 100%;
+    background-color: tomato;
+    z-index: 2;
+}
+
+
+/* .m_m {
+    border: 1px solid #ccc;
+} */

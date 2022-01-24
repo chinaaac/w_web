@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="lib/axios.js"></script>
+</head>
+
+<body>
+    <button id='b1'>发起get请求</button> <button id="b2">发起post请求</button>
+    <div>
+        <p>这里是aixos请求</p>
+        <button id='b3'>axios get</button>
+        <button id='b4'>axios post</button>
+    </div>
+    <script>
+        document.querySelector('#b1').addEventListener('click', function() {
+            var url = 'http://www.liulongbin.top:3006/api/get'
+            var para = {
+                name: 'cc',
+                age: 20
+            }
+            axios.get(url, {
+                params: para
+            }).then(function(res) {
+                console.log(res)
+                console.log(res.data)
+
+            })
+        })
+
+        document.querySelector('#b2').addEventListener('click', function() {
+            var url = 'http://www.liulongbin.top:3006/api/post'
+            var para = {
+                name: 'cc',
+                age: 20
+            }
+            axios.post(url, para).then(function(res) {
+                console.log(res)
+                console.log(res.data)
+
+            })
+        })
+
+        document.querySelector('#b3').addEventListener('click', function() {
+            var url = 'http://www.liulongbin.top:3006/api/get'
+            var para = {
+                name: 'cc',
+                age: 20
+            }
+            axios({
+                method: 'get',
+                url: url,
+
+            }).then(function(rs) {
+                console.log(rs.data)
+            })
+        })
+
+        document.querySelector('#b4').addEventListener('click', function() {
+            var url = 'http://www.liulongbin.top:3006/api/post'
+            var para = {
+                name: 'cc',
+                age: 20
+            }
+            axios({
+                method: 'post',
+                url: url,
+                data: para
+            }).then(function(rs) {
+                console.log(rs.data)
+            })
+        })
+    </script>
+</body>
+
+</html>

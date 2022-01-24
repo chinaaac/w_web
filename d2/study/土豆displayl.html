@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .td {
+            position: relative;
+            width: 444px;
+            height: 320px;
+            background-color: pink;
+            margin: 30px auto;
+        }
+        .td>img {
+            width: 100%;
+            height: 100%;
+           
+        }
+        
+        .td::before {
+            content: "";
+            position:absolute;
+            background: rgba(0,0,0,.4) url(../../img/xxtz.png) center;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-repeat: no-repeat;
+            display: none;
+
+        }
+        .td:hover::before{
+           display: block;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="td">
+        <!-- <div class="mask"></div> -->
+        <img src="../../img/dmtg.png" alt="">
+    </div>
+    <div class="td">
+        <!-- <div class="mask"></div> -->
+        <img src="../../img/dmtg.png" alt="">
+    </div>
+    <div class="td">
+    <!-- <div class="mask"></div> -->
+    <img src="../../img/dmtg.png" alt="">
+</div>
+</body>
+</html>

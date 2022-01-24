@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1. 创建类class 创建一个明星类
+        class Star {
+            constructor(uname, age) {
+                this.uname = uname
+                this.age = age
+            }
+            sing(song) {
+                console.log('我唱歌' + song)
+            }
+
+
+
+            //my
+            pulla() {
+                alert('aaa')
+            }
+        }
+
+
+        //2. 利用类创建一个对象new
+        var ldh = new Star('刘德华', 18)
+        var zxy = new Star('张学友', 19)
+        console.log(ldh.uname + ldh.age)
+        console.log(zxy.uname + zxy.age)
+        ldh.sing('冰雨')
+        zxy.sing(' 李小龙 ')
+
+
+
+
+
+        //my
+        var a = document.createElement('input')
+        a.type = 'button'
+        a.value = '按钮'
+            // a.onclick(ldh.sing('helo'))
+        document.body.appendChild(a)
+    </script>
+</body>
+
+</html>

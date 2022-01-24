@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?8w6y3v');
+  src:  url('../fonts/icomoon.eot?8w6y3v#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?8w6y3v') format('truetype'),
+    url('../fonts/icomoon.woff?8w6y3v') format('woff'),
+    url('../fonts/icomoon.svg?8w6y3v#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+        div {
+            width: 200px;
+            height: 200px;
+            background: pink;
+        }
+        div::before {
+            display: inline-block;
+            content: "我";
+            width: 30px;
+            height: 40px;
+            background-color: red;
+        }
+        div::after {
+            font-family: 'icomoon';
+            content: "";
+        }
+    </style>
+</head>
+<body>
+    <div>
+        shi
+    </div>
+</body>
+</html>

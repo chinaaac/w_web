@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--  -->
+
+    <input type="file" name="file" id="file" multiple>
+    <input type="button" value="上传" id='up'>
+    <!-- 显示上传完成的图片 -->
+    <img src="" alt="" id='img' width="800px">
+
+    <script>
+        document.querySelector('#up').addEventListener('click', function() {
+            // 检测用户是否选择了文件
+            var ff = document.querySelector('#file').files
+            if (ff.length <= 0) {
+                alert('没有选择内容')
+            } else {
+
+                // 向formdata里添加元素
+                var fd = new FormData()
+                    // for (var i = 0; i < ff.length; i++) {
+                    //     fd.append('avatar' + i, ff[i])
+                    // }
+                fd.append('avatar', ff[0])
+
+                // 创建xhr
+                var xhr = new XMLHttpRequest()
+                xhr.open('post', 'http://www.liulongbin.top:3006/api/upload/avatar')
+                xhr.send(fd)
+
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+
+                        var data = JSON.parse(xhr.responseText)
+                        console.log(data)
+                        document.querySelector('#img').src = 'http://www.liulongbin.top:3006' + data.url
+                    }
+                }
+
+                xhr.upload.onprogress = function(e) {
+                    if (e.lengthComputable) {
+                        var pro = Map.ceil((e.loaded / e.total) * 100)
+                        console.log(pro)
+                    }
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function a1(uname, age) {
+            this.name = uname
+            this.age = age
+
+            this.sing = function() {
+                    console.log('hhahahah')
+                }
+                // constructor() {
+                //     console.log('2434')
+                // }
+
+        }
+        my = new a1('cc', 18)
+        my.sing()
+        console.log(my)
+        console.dir(a1)
+    </script>
+</body>
+
+</html>

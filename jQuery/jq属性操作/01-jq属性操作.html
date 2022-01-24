@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../jquery.js"></script>
+</head>
+
+<body>
+    <a href="https://jd.com">1</a>
+    <input type="checkbox" id='ck' checked>
+    <div index='1' data-h="2">我是div</div>
+    <span>123</span>
+
+    <script>
+        $(function() {
+
+            // 获取固有属性用prop('属性')
+            console.log($('a').prop('href'))
+                // 设置属性
+            $('a').prop('title', '我我我')
+
+            console.log($('input').prop('checked'))
+            $('input').prop('checked', 1)
+            console.log($('input').prop('checked'))
+
+            $('input').change(function() {
+                console.log($('input').prop('checked'))
+            })
+
+
+            // 获取自定义属性
+            $('div').attr('index')
+            console.log($('div').attr('index'))
+                // 设置自定义属性
+            $('div').attr('js', 'cc')
+                // 本地存储和t2联动测试
+            localStorage.setItem('name', 'dcc')
+
+
+            // 数据缓存data() 这个里面的数据是存放在元素内存里面
+            // 检查元素内容不可见（dom不可见）
+            // 获取h5属性不用写data-开头，返回数字型
+            $('span').data('uname', 'andy')
+            console.log($('span').data('uname'))
+            console.log($('div').data('h'))
+
+        })
+    </script>
+</body>
+
+</html>

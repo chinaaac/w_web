@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 50*50的盒子转换成vw */
+        
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        div {
+            width: 13.33vw;
+            height: 13.33vw;
+            background-color: pink;
+            font-size: 5.33vw;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div>我咋这里</div>
+</body>
+
+<script>
+    var a = document.querySelector('div')
+    a.onclick = function() {
+        alert(1)
+    }
+</script>
+
+</html>

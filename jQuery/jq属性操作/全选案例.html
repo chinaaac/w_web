@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery.js"></script>
+
+    <style>
+        div {
+            margin: 0 auto;
+        }
+        
+        .nr {
+            height: 100px;
+            width: 50%;
+            background-color: pink;
+            border-bottom: 2px solid #333;
+        }
+        
+        .top {
+            height: 100px;
+            width: 50%;
+            background-color: skyblue;
+            border-bottom: 2px solid #333;
+        }
+        
+        input {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <input type="checkbox">全选
+    </div>
+    <div class="sp">
+        <div class="nr"></div>
+        <div class="nr"> </div>
+        <div class="nr"></div>
+    </div>
+    <div class="top">
+        <input type="checkbox">全选
+    </div>
+
+    <script>
+        var nrs = document.querySelectorAll('.nr')
+        for (var i = 0; i < nrs.length; i++) {
+            var ck = document.createElement('input')
+            ck.setAttribute('type', 'checkbox')
+            ck.setAttribute('class', 'st')
+
+
+            nrs[i].appendChild(ck)
+            console.log(0)
+        }
+        console.log(1)
+        $(function() {
+
+
+            $('.top').change(function() {
+                if (1) {
+                    if ($(this).children('input').prop('checked')) {
+                        // $(this).siblings('.sp').find('.nr').children().prop('checked', 1)
+
+                        $('.nr').children().prop('checked', 1)
+                        $('.top').children().prop('checked', 1)
+                    } else {
+                        // $(this).siblings('.sp').find('.nr').children().prop('checked', 0)
+                        $('.nr').children().prop('checked', 0)
+                        $('.top').children().prop('checked', 0)
+                    }
+                }
+                $('.st').change(function() {
+                        // 如果被选择的个数为3则选中全选
+
+                        console.log($('.nr>input:checked'))
+                        if ($('.nr>input:checked').length === $('.st').length) {
+                            $('.top').children().prop('checked', 1)
+                        } else {
+                            $('.top').children().prop('checked', 0)
+                        }
+                        // console.log($('.st:checked'))
+                        // console.log(11)
+                    })
+                    // $('.nr').children().prop('checked', $('.top').children().prop('checked'))
+                    // console.log($('.top').children().prop('checked'))
+                    // console.log($('.top').children())
+                    // console.log($('.top').children()[0].style.checked)
+            })
+
+        })
+    </script>
+</body>
+
+</html>

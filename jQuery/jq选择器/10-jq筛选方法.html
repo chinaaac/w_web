@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jquery.js"></script>
+</head>
+
+<body>
+    <ol>
+        <li>1</li>
+        <li>2</li>
+        <li class="item">3</li>
+        <li>4</li>
+        <li>5</li>
+    </ol>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <div class="cc">cc</div>
+    <div></div>
+
+    <script>
+        // 1. sibliings('标签')，不包含自己的所有兄弟元素
+        $('ol .item').siblings('li').css('color', 'red')
+
+        //2.自己之前的同辈元素 .prevAll()
+        $('ol .item').prevAll().css('color', 'pink')
+            // 3. 自己之后的同辈元素 .netxAll()
+        $('ol .item').nextAll().css('color', 'blue')
+
+
+        //4 .选择N个元素
+
+        // a.选择器
+        $('ul li:eq(2)').css('color', 'red')
+
+        // b.方法
+        $('ul>li').eq(3).css('color', 'blue')
+
+
+        // 判断是否有某个类名,有true
+        console.log($('div').eq(0).hasClass('cc'))
+    </script>
+</body>
+
+</html>

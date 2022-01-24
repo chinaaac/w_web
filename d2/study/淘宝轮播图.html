@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            position: relative;
+            top: 200px;
+            left: 50%;
+            width: 500px;
+            height: 250px;
+            margin-left: -250px;
+            background-color: pink;
+        }
+        .img {
+            width: 500px;
+            height: 250px;
+        }
+    .left,
+    .right {
+        position: absolute;
+            top: 50%;
+            width: 20px;
+            height: 30px;
+            background: rgba(0,0,0,.3);
+            margin-top: -15px;
+            text-align: center;
+            line-height: 30px;
+    }
+        .left {
+            left: 0;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        .right {
+           
+            right: 0;
+           
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+           
+        }
+        ul {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            background:rgba(255,255,255,.5);
+            width: 70px;
+            height:13px;
+            margin-left: -35px;
+            border-radius: 7px;
+           
+        }
+
+        .bu li {
+            height: 8px;
+            width: 8px;
+            background-color: #fff;
+            list-style: none;
+            border-radius: 50%;
+            float: left;
+            margin: 3px;
+            
+        }
+        .bu .ys {
+            background-color: tomato;
+        }
+       
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="pic">
+            <img src="../../img/线索.png" alt=""/>
+            <!-- <img src="../../img/a.jpg" alt=""/> -->
+
+        </div>
+        <div class="left">
+            <a href="#">&lt;</a>
+        </div>
+        <div class="right">
+            <a href="#">&gt;</a>
+        </div>
+        <div class="bu">
+            <ul>
+                <!-- <li></li>
+                <li></li>
+                <li></li>
+                <li></li> -->
+                <li class="ys"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

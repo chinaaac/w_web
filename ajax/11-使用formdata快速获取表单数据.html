@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" id='ff'>
+        <input type="text" name="user" id="user"> <input type="password" name="pwd" id="pwd"> <input type="submit" value="提交">
+    </form>
+    <script>
+        var ff = document.querySelector('#ff')
+
+        ff.addEventListener('submit', function(e) {
+            e.preventDefault()
+                // 将表单数据传入进来
+            var fd = new FormData(ff)
+            var xhr = new XMLHttpRequest()
+            xhr.open('post', 'http://www.liulongbin.top:3006/api/formdata')
+            xhr.send(fd)
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    console.log(xhr.responseText)
+
+                    console.log(JSON.parse(xhr.responseText))
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

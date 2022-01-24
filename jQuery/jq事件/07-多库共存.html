@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../jquery.js"></script>
+</head>
+
+<body>
+
+    <div></div>
+
+    <span></span>
+    <script>
+        $(function() {
+            // 自定义$函数
+            function $(ele) {
+                console.log(1)
+                return document.querySelector(ele)
+            }
+
+            $('div')
+            console.log($('div'))
+
+            // 修改$为jQuery
+            jQuery.each()
+
+            // 自定义jq符号为sss
+            var sss = jQuery.noConflict()
+
+            sss('span').html('123')
+        })
+    </script>
+</body>
+
+</html>

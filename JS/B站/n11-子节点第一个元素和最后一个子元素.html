@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div>我是div</div>
+    <span>我是span</span>
+    <ul>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ul>
+
+    <ol>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ol>
+    <div class="box">
+        <span class="erweima"></span>
+    </div>
+
+    <script>
+        var ol = document.querySelector('ol')
+            // ol.style.backgroundColor = 'red'
+            // var lis = ul.querySelectorAll('li')
+        console.log(ol.firstChild) //获取到了文本，不是想要内容
+
+        console.log(ol.firstElementChild)
+        ol.firstElementChild.style.color = 'red'
+            // ol.firstElementChild.setAttribute('color', 'green')
+        ol.lastElementChild.style.color = 'green'
+
+        ol.firstElementChild.setAttribute('background-color', 'yellow')
+    </script>
+</body>
+
+</html>

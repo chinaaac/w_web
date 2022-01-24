@@ -1,0 +1,1 @@
+success({ name: 'cc', age: 123 })

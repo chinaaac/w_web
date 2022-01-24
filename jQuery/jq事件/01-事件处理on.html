@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../jquery.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        
+        .curr {
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+    <ul>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+    </ul>
+
+    <ol></ol>
+    <script>
+        // 1.单个事件注册
+        if (0) {
+            $('div').click(function() {
+                $(this).css('backgroundColor', 'red')
+            })
+
+            $('div').mouseover(function() {
+                $(this).css('backgroundColor', 'skyblue')
+            })
+        }
+
+
+        // /2 事件处理 on()
+        // e.on(eve,[e],fn)
+
+        if (0) {
+            $('div').on({
+                    mouseover: function() {
+                        $(this).css('backgroundColor', 'skyblue')
+                    },
+                    click: function() {
+                        $(this).css('backgroundColor', 'red')
+                    },
+                    mouseout: function() {
+                        $(this).css('backgroundColor', 'black')
+                    }
+                }
+
+            )
+        }
+
+        // 添加共同事件
+
+        $('div').on("mouseenter mouseleave", function() {
+            $(this).toggleClass('curr')
+        })
+
+        // 3. on可以实现事件委托（委派）
+        // 动态创建的元素最适合用事件委派
+
+
+        $('ul').on('click', 'li',
+            function() {
+                console.log($(this))
+            })
+
+
+        $('ol').on('click', 'li', function() {
+            console.log($(this))
+        })
+        var li = '<li>123</li>'
+        $('ol').append(li)
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <span></span>
+    <script>
+        // 1. dom对象，用原生js获取过来的对象就是dom对象
+        var mydiv = document.querySelector('div')
+        console.dir(mydiv)
+        var myspan = document.querySelector('myspan')
+
+
+        // 2.jq对象，用jq方式获取过来的对象是jq对象，本质：通过$把dom元素进行了包装
+        $('div');
+        console.dir($('div'))
+
+        //3 jq对象只能用jq方法，原生js只能用原生js方法
+    </script>
+</body>
+
+</html>

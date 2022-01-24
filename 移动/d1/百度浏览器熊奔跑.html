@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #22184a;
+        }
+        
+        .bear {
+            width: 200px;
+            height: 100px;
+            background: url(https://img-blog.csdnimg.cn/20200714213005170.png) repeat-x;
+        }
+        
+        @keyframes bearComing {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(1600px);
+            }
+        }
+        
+        .bear {
+            width: 200px;
+            height: 100px;
+            background: url(https://img-blog.csdnimg.cn/20200714213005170.png) repeat-x;
+            animation: bearComing 7s both;
+        }
+        /* @keyframes bearRun {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: -1600px 0;
+            }
+        }
+         */
+        /* .bear {
+            width: 200px;
+            height: 100px;
+            background: url(images/bearrun.png) repeat-x;
+            animation: bearComing 7s both, bearRun 1s infinite steps(8);
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="bear"></div>
+</body>
+
+</html>

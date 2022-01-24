@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr1 = [1, 2, 5, 7, 2, 4, 6, 2, 81, 10, 0, 91]
+        var newa1 = []
+        for (var i = 0; i < arr1.length; i++) {
+            if (arr1[i] != 2) {
+                newa1[newa1.length] = arr1[i]
+            }
+        }
+        var h = []
+        for (var i = 0; i < arr1.length; i++) {
+            h[arr1.length - 1 - i] = arr1[i]
+        }
+        console.log('这是h' + h)
+        console.log(newa1)
+        max = arr1[0]
+        for (var i = 0; i < arr1.length - 1; i++) {
+            for (var j = i + 1; j < arr1.length; j++) {
+                if (arr1[i] > arr1[j]) {
+                    var te;
+                    te = arr1[i];
+                    arr1[i] = arr1[j]
+                    arr1[j] = te
+
+                }
+
+            }
+            console.log(arr1)
+        }
+    </script>
+</body>
+
+</html>

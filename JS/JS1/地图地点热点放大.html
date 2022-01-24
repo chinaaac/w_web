@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .map {
+            position: relative;
+            width: 747px;
+            height: 616px;
+            background: url(../../img/nrk.png) no-repeat;
+        }
+        
+        .city {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+        }
+        
+        .city div[class^='pulse'] {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            box-shadow: 0 0 12px red;
+            border-radius: 50%;
+        }
+        
+        .dotted {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background-color: red;
+            border-radius: 50%;
+            /* transform-origin: 50%, 50%; */
+        }
+        
+        @keyframes pulse {
+            0% {}
+            70% {
+                width: 40px;
+                height: 40px;
+                opacity: 1;
+            }
+            100% {
+                width: 70px;
+                height: 70px;
+                opacity: 0;
+            }
+        }
+        
+        .pulsed1 {
+            animation: pulse 1.2s linear;
+        }
+        
+        .pulsed2 {}
+        
+        .pulsed3 {}
+    </style>
+</head>
+
+<body>
+    <div class="map">
+        <div class="city" style="color: red;">
+            <div class="dotted"></div>
+            <div class="pulsed1"></div>
+            <div class="pulsed2"></div>
+            <div class="pulsed3"></div>
+        </div>
+    </div>
+</body>
+
+</html>

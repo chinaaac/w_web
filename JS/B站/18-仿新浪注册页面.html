@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* span::before {
+            content: ' ! ';
+            color: pink;
+        } */
+        
+        .wrong {
+            color: red;
+            /* background-color: green; */
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="" id="">
+    <span>请输入6-16位密码</span>
+    <script>
+        var inp = document.querySelector('input')
+        var sp = document.querySelector('span')
+        inp.onfocus = function() {
+
+        }
+        inp.onblur = function() {
+            this.len = this.value.length
+            console.log(this.len)
+            if (inp.len < 6 || inp.len > 16) {
+                sp.className = 'wrong'
+                sp.innerHTML = '输入的位数错误'
+            } else {
+                sp.className = ''
+                sp.innerHTML = ''
+            }
+        }
+    </script>
+</body>
+
+</html>

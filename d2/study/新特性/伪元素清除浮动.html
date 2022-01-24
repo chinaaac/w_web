@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+           
+           
+            background-color: red;
+        }
+
+        div[class*=d] {
+            height: 100px;
+            width: 100px;
+            background-color: green;
+            float: left;
+        }
+        .box::before{
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        .box::before,
+        .box::after {
+            content: "";
+            display: table;
+        }
+        .box::after{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="d1">1</div>
+        <div class="d2">2</div>
+        123
+    </div>
+    123
+</body>
+</html>

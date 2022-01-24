@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function count() {
+            var str = '改革春风吹满地，改革春风吹满地,春'
+                // str.indexOf('春'), [起始的位置]
+
+            var j = 0
+            var sum = 0
+            for (var i = 0; i < str.length; i++) {
+
+                if (str.indexOf('春', j) != -1) {
+                    j = str.indexOf('春', j)
+
+                    console.log(j)
+                    j += 1
+                    sum++
+                }
+            }
+            return sum
+        }
+        // console.log(count())
+
+
+        var a = ['red', 'bule', 'c', 'd', 'red', 'bule', 'red2']
+        var co = 0
+
+        var index = a.indexOf('red')
+        while (index != -1) {
+            console.log(index);
+            index = a.indexOf('red', index + 1)
+            co++
+        }
+        console.log(co)
+    </script>
+</body>
+
+</html>

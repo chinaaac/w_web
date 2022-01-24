@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var sum = 0,
+        //     avg = 0;
+        // var num = prompt('input stu num:')
+        // for (var i = 1; i <= num; i++) {
+        //     sum += parseFloat(prompt('input' + i + 'soc:'))
+        // }
+        // alert(sum)
+        // alert(sum / num)
+        h = prompt('h')
+
+        l = prompt('l')
+        str = ''
+        for (var i = 1; i <= h; i++) {
+
+            for (var j = 1; j <= l - i + 1; j++) {
+                str += '*'
+            }
+            str += '\n'
+        }
+        console.log(str)
+
+        str = ''
+
+        for (var i = 1; i <= h; i++) {
+
+            for (var j = 1; j <= i; j++) {
+                str += '*'
+            }
+            str += '\n'
+        }
+        console.log(str)
+        str = ''
+        for (var i = 1; i <= h; i++) {
+
+            for (var j = 1; j <= i; j++) {
+                str += j + 'x' + i + '=' + i * j + '\t'
+            }
+            str += '\n'
+        }
+        console.log(str)
+    </script>
+</body>
+
+</html>

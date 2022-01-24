@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        
+        span {
+            position: absolute;
+            display: block;
+            top: 200px;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击夏雨荷才走</button>
+    <div></div>
+    <span>夏雨荷</span>
+    <script>
+        function animate(obj, target) {
+
+            //执行前清除定时器防止多次执行同一个定时器,保持只有一个定时器执行
+            clearInterval(obj.time)
+                //给不同的元素上了不同的定时器
+            obj.time = setInterval(() => {
+                if (obj.offsetLeft >= target) {
+                    clearInterval(obj.time)
+                }
+                obj.style.left = obj.offsetLeft + 1 + 'px'
+            }, 10);
+        }
+
+        var div = document.querySelector('div')
+        var span = document.querySelector('span')
+        var btn = document.querySelector('button')
+        animate(div, 300)
+            // animate(span, 200)
+        btn.addEventListener('click', function() {
+            animate(span, 200)
+        })
+    </script>
+</body>
+
+</html>

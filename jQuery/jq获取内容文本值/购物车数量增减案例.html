@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery.js"></script>
+
+    <style>
+        div {
+            margin: 0 auto;
+        }
+        
+        .dd {
+            width: 50%;
+            border-bottom: 2px solid #333;
+            text-align: center;
+        }
+        
+        .nr {
+            position: relative;
+            height: 100px;
+            width: 50%;
+            background-color: pink;
+            border-bottom: 2px solid #333;
+        }
+        
+        .top {
+            height: 100px;
+            width: 50%;
+            background-color: skyblue;
+            border-bottom: 2px solid #333;
+        }
+        
+        .bg {
+            background-color: orange !important;
+            opacity: 0.5 !important;
+        }
+        
+        button,
+        input {
+            width: 20px;
+            height: 20px;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            /* position: ; */
+        }
+        
+        .dzj {
+            position: absolute;
+            left: 40%
+        }
+        
+        .jg {
+            position: absolute;
+            left: 50%
+        }
+        
+        .nr {
+            position: relative;
+        }
+        
+        .js {
+            position: absolute;
+            top: 50%;
+            right: 50px;
+        }
+        
+        button {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <input type="checkbox">全选
+    </div>
+    <div class="sp">
+        <div class="nr">
+            <div class="jg">￥12</div>
+            <div class="dzj"></div>
+        </div>
+        <div class="nr">
+            <div class="jg">￥16</div>
+            <div class="dzj"></div>
+        </div>
+        <div class="nr">
+            <div class="jg">￥18</div>
+            <div class="dzj"></div>
+        </div>
+    </div>
+    <div class="top">
+        <input type="checkbox">全选
+    </div>
+
+    <div class="dd">
+        <a href="javascript:;" class="qlc">清理购物车</a>
+        <a href="javascript:;" class="rec">删除选定商品</a> 件数：
+        <span class="jis"></span> 总价：
+        <span class="zj"></span>
+    </div>
+
+    <script>
+        var nrs = document.querySelectorAll('.nr')
+        var jgs = document.querySelectorAll('.jg')
+
+        for (var i = 0; i < nrs.length; i++) {
+            var ck = document.createElement('input')
+            ck.setAttribute('type', 'checkbox')
+            ck.setAttribute('class', 'st')
+            var divv = document.createElement('div')
+            divv.setAttribute('class', 'js')
+
+            var bj = document.createElement('button')
+            bj.innerHTML = '-'
+
+            var bad = document.createElement('button')
+            bad.innerHTML = '+'
+            var inp = document.createElement('input')
+            inp.value = 1
+
+
+            // nrs[i].appendChild(ck)
+            // nrs[i].insertBefore(ck, document.getElementsByClassName('.jg'))
+            // jg[i].insertAdjacentElement(afterend, 123)
+            nrs[i].insertBefore(ck, jgs[i])
+            nrs[i].appendChild(divv)
+            divv.appendChild(bj)
+            divv.appendChild(inp)
+            divv.appendChild(bad)
+                // divv.style.backgroundColor('red')
+
+        }
+
+
+        $('.nr').css({
+
+        })
+        $('.js').css({
+
+        })
+
+        $('.top').children('input').attr('class', 'cc')
+            // console.log($('top').children().attr
+        $('.cc').change(function() {
+            console.log($(this).prop('checked'))
+            $('.st').prop('checked', $(this).prop('checked'))
+            $('.cc').prop('checked', $(this).prop('checked'))
+            if ($('.cc').prop('checked')) {
+                $('.st').parent().addClass('bg')
+            } else {
+                $('.st').parent().removeClass('bg')
+            }
+        })
+
+        $('.st').change(function() {
+            console.log($('.st:checked'))
+            console.log($('.st').length)
+            if ($(this).prop('checked')) {
+                $(this).parent().addClass('bg')
+
+            } else {
+                $(this).parent().removeClass('bg')
+            }
+            if ($('.st:checked').length == $('.st').length) {
+                // alert(1)
+                $('.cc').prop('checked', 1)
+            } else {
+                $('.cc').prop('checked', 0)
+            }
+        })
+
+
+        //////////////////////////////////////////////////////
+        $('.js').children('button:first-child').click(function() {
+
+            console.log($(this).siblings('input').val())
+            var ls = parseInt($(this).siblings('input').val())
+            if (ls > 1) {
+
+                ls--
+                $(this).siblings('input').val(ls)
+                var p = $(this).parent().siblings('.jg').html()
+                p = p.substr(1)
+                $(this).parent().siblings('.dzj').html((p * ls).toFixed(2))
+                var dzjs = document.querySelectorAll('.dzj')
+                var zj = document.querySelector('.zj')
+                var sum = 0
+                for (var i = 0; i < dzjs.length; i++) {
+                    sum += parseInt(dzjs[i].innerHTML)
+                    console.log(dzjs[i].innerHTML)
+                }
+                getSum()
+                zj.innerHTML = sum.toFixed(2)
+            } else {
+                alert('不能再减了')
+            }
+        })
+        var dzjs = document.querySelectorAll('.dzj')
+        $('.dzj')[0].innerHTML = 12
+        $('.dzj')[1].innerHTML = 16
+        $('.dzj')[2].innerHTML = 18
+        var zj = document.querySelector('.zj')
+        zj.innerHTML = 12 + 16 + 18
+        $('.js').children('button:last-child').click(function() {
+            console.log($(this).siblings('input').val())
+            var ls = parseInt($(this).siblings('input').val())
+            ls++
+            $(this).siblings('input').val(ls)
+            var p = $(this).parent().siblings('.jg').html()
+            p = p.substr(1)
+            $(this).parent().siblings('.dzj').html((p * ls).toFixed(2))
+
+            var zj = document.querySelector('.zj')
+            var sum1 = 0
+            for (var i = 0; i < dzjs.length; i++) {
+                sum1 += parseInt(dzjs[i].innerHTML)
+            }
+
+            zj.innerHTML = sum1.toFixed(2)
+
+            getSum()
+        })
+
+        $('.js>input').change(function() {
+
+            var n = $(this).val()
+            var p = $(this).parent().siblings('.jg').html()
+            p = p.substr(1)
+            $(this).parent().siblings('.dzj').html((p * n).toFixed(2))
+            zzj()
+            getSum()
+        })
+
+        function zzj(params) {
+            var sum = 0
+            for (var i = 0; i < dzjs.length; i++) {
+                sum += parseInt(dzjs[i].innerHTML)
+
+            }
+            zj.innerHTML = sum.toFixed(2)
+        }
+
+        function getSum() {
+            var sum = 0
+            $('.js>input').each(function(k, v) {
+                var a = parseInt(v.value)
+                console.log(k, a)
+                sum += a
+
+            })
+            $('.jis').html(sum)
+        }
+        getSum()
+
+        $('.nr').append('<a href="javascript:;">删除</a>')
+
+        $('.nr>a').click(function(params) {
+            $(this).parent().remove()
+            dis()
+            getSum()
+            dzjs = document.querySelectorAll('.dzj')
+            zzj()
+        })
+
+        $('.qlc').click(function(params) {
+            $('.nr').remove()
+            dis()
+            getSum()
+            dzjs = document.querySelectorAll('.dzj')
+            zzj()
+
+
+
+        })
+        $('.rec').click(function(params) {
+
+            $('.st:checked').parent().remove()
+            dis()
+            getSum()
+            dzjs = document.querySelectorAll('.dzj')
+            zzj()
+
+        })
+
+        function dis(params) {
+            $('.nr').length == 0 ? $('.top>input').attr('disabled', 1) : 0
+        }
+    </script>
+</body>
+
+</html>

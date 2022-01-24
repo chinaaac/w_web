@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>ff</button>
+    <script>
+        var _that
+        var that
+        class st {
+            constructor(x, y) {
+                that = this
+                console.log(this)
+                this.x = x;
+                this.y = y;
+                this.btn = document.querySelector('button')
+                this.btn.onclick = that.sing;
+                console.log(that)
+
+            }
+            sing() {
+                console.log(that.x)
+            }
+            dance() {
+                _that = this
+                console.log(this)
+                console.log('dance')
+            }
+        }
+
+        var ldh = new st('123')
+        console.log(ldh)
+        console.log(ldh === that)
+        ldh.dance()
+        console.log(_that === ldh)
+        console.log(ldh)
+    </script>
+</body>
+
+</html>

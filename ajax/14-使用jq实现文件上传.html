@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery.js"></script>
+</head>
+
+<body>
+    <input type="file" name="file" id="file">
+    <button id='up'>上传</button>
+    <div>
+        <img src="lib/loading.gif" alt="" id='img'>
+    </div>
+    <div>
+
+    </div>
+    <script>
+        $('#img').hide()
+        $('#up').on('click', function() {
+                var files = $('#file')[0].files
+                console.log(files)
+                if (files.length <= 0) return alert('内容不能为空')
+                else {
+                    var fd = new FormData()
+                    fd.append('avatar', files[0])
+                    console.log(fd)
+                    $.ajax({
+                        type: 'post',
+                        url: 'http://www.liulongbin.top:3006/api/upload/avatar',
+                        data: fd,
+                        // 不修改这个属性使用默认属性，上传文件必须用
+                        contentType: false,
+                        // 不对数据编码，默认上传，上传文件必须用
+                        processData: false,
+                        success: function(res) {
+                            console.log(res)
+                        }
+                    })
+
+                }
+            })
+            // 监听ajax请求开始
+        $(document).ajaxStart(function() {
+            $('#img').slideDown()
+        })
+        $(document).ajaxStop(function() {
+            $('#img').hide()
+            console.log('上传完成')
+        })
+        $(document).ajax
+    </script>
+</body>
+
+</html>

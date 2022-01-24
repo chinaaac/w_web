@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery.js"></script>
+</head>
+
+<body>
+
+    <div>1</div>
+    <ul>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+    </ul>
+    <p>只触发一次的事件one()</p>
+
+</body>
+
+<script>
+    $(function() {
+        var div = $('div')
+            // div绑定事件
+        div.on({
+                click: function() {
+                    $(this).css('color', 'red')
+                },
+                mouseout: function() {
+                    $(this).css('color', 'pink')
+                }
+            })
+            // 解绑div所有事件 div.off()，指定事件 div.off('eve')
+        div.off('mouseout')
+
+        $('ul').on('click', 'li',
+            function() {
+                console.log($(this))
+
+                // 解除事件
+                $(this).parent().off('click', 'li')
+                    // 或者
+                $('ul').off('click', 'li')
+            })
+        $('p').one('click', function() {
+            $(this).html('执行完毕，事件解除')
+        })
+
+    })
+</script>
+
+</html>

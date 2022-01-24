@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery.js"></script>
+
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+    <script>
+        // 样式操作之css方法
+        $(function() {
+            // 只写属性，返回值，带单位
+            $('div').css('width')
+
+            console.log($('div').css('width'))
+
+            // 赋值为300px，数字可以不加单位
+            $('div').css('width', '300px')
+
+            // 多属性赋值,属性可以不加引号,复合属性如backgroundColor需要驼峰命名
+            $('div').css({
+                'color': 'red',
+                'width': '500',
+                'border': '5px  blue solid',
+                backgroundColor: 'red'
+            })
+
+        })
+    </script>
+</body>
+
+</html>

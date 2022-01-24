@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+
+<body>
+    <div>123</div>
+    <ul>
+        <li>abc</li>
+        <li>abc</li>
+        <li>abc</li>
+    </ul>
+    <script>
+        var div = document.querySelector('div')
+        var ul = document.querySelector('ul')
+        div.addEventListener('click', function(e) {
+            console.log(e.target)
+            console.log(this)
+        })
+
+        //e.target返回的是触发事件的对象（具体元素） this返回的是被绑定事件的元素e.onclick返回e
+        //有兼容性问题e.currentTarget=this
+        ul.addEventListener('click', function(e) {
+            console.log(this)
+            console.log(e.target)
+            console.log(e.currentTarget)
+        })
+    </script>
+</body>
+
+</html>

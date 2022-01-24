@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        
+        td,
+        th {
+            border: 1px solid #333
+        }
+        
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>姓名</td>
+                <td>科目</td>
+                <td>成绩</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+        var date = [{
+            name: 'cc',
+            sub: 'js',
+            sco: '90'
+        }, {
+            name: 'cl',
+            sub: 'jj',
+            sco: '90'
+        }, {
+            name: 'cf',
+            sub: 'js',
+            sco: '90'
+        }, {
+            name: 'cd',
+            sub: 'js',
+            sco: '90'
+        }, {
+            name: 'cf',
+            sub: 'js',
+            sco: '90'
+        }, {
+            name: 'cd',
+            sub: 'js',
+            sco: '90'
+        }]
+
+        console.log(date[0].name)
+
+        var tbody = document.querySelector('tbody')
+        console.log(date.length)
+        for (var i = 0; i < date.length; i++) {
+            var tr = document.createElement('tr')
+            tbody.appendChild(tr)
+
+
+            for (var key in date[i]) {
+                var td = document.createElement('td')
+                td.innerHTML = date[i][key]
+                tr.appendChild(td)
+
+            }
+
+
+            var c = document.createElement('td')
+            c.innerHTML = "<a href='javascript:;'>删除</a>";
+            tr.appendChild(c)
+            console.log(tr.children.length)
+            tr.children[tr.children.length - 1].onclick = function() {
+                this.parentNode.parentNode.removeChild(this.parentNode)
+                    //tbody.removeChild(this.parentNode) //这个也可以
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

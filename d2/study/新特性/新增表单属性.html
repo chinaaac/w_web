@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input::placeholder {
+            color: red;
+        }
+        input[value] {
+            color: green;
+        }
+        input[value="input un2"] {
+            background-color: blue;
+        }
+        input[value] {
+            background-color: blue;
+        }
+
+
+        div[class^="icon"] {
+            background-color: tomato;
+        }
+
+        div[class$="cc"] {
+            color: red;
+        }
+
+        div[class*="ic"] {
+            color: skyblue;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="">
+
+    <input type="text" value="input un">
+    <input type="text" value="input un2">
+    <input type="text">
+    <input type="file" multiple="multiple">
+    <input name="ss" autocomplete="on" autofocus="autofocus" type="search" required="required" placeholder="hello">
+    <input type="submit" value="提交">
+    </form>
+
+    <div class="icon1">1</div>
+    <div class="icon2">2</div>
+    <div class="icon3">3</div>
+    <div class="icon4">4</div>
+</body>
+</html>

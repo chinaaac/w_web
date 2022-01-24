@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+    <script>
+        var div = document.querySelector('div')
+        div.addEventListener('touchstart', function(e) {
+            console.log('触摸了')
+            console.log(e)
+            console.log(e.targetTouches);
+            //touches获取所有手指泪飙
+
+            //targetTouches 正在触摸当前元素的手指列表
+            //如果监听的是一个dom元素，他们两个是一样的
+
+            //changedTouches 手指状态发生改变的列表，从无到有或者从有到无
+
+            //因为我们一般都是触摸元素， 所以经常使用的时targetTouches
+            //获取第一个手指的信息
+            console.log(e.targetTouches[0])
+
+        })
+        div.addEventListener('touchend', function(e) {
+            console.log('松开了')
+            console.log(e);
+            //当手指离开时targetTouches和touches内容就没了
+            //changetouches 依然存在返回发生改变的状态
+        })
+        div.addEventListener('touchmove', function() {
+            console.log('移动了')
+
+        })
+    </script>
+</body>
+
+</html>

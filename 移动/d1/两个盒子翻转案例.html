@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .big {
+            position: relative;
+            height: 300px;
+            width: 300px;
+            margin: 100px auto;
+            transition: all 2s;
+            /* background-color: green; */
+            transform-style: preserve-3d;
+            perspective: 500px;
+        }
+        
+        .big:hover {
+            transform: rotateY(180deg);
+        }
+        
+        .big div:first-child {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: red;
+            border-radius: 50%;
+            /* z-index: 1; */
+            font-size: 30px;
+            text-align: center;
+            line-height: 300px;
+            /* transform: rotateY(90deg) */
+        }
+        
+        .big div:nth-child(2) {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: teal;
+            border-radius: 50%;
+            font-size: 30px;
+            text-align: center;
+            line-height: 300px;
+            transform: rotateY(180deg)
+        }
+        /* .big div:last-child {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            border-radius: 50%;
+            font-size: 30px;
+            text-align: center;
+            line-height: 300px;
+            transform: rotate3d(105px, 0, 0, 105deg);
+            transform-origin: left bottom;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="big">
+        <div class="d1">1</div>
+        <div class="d2">2</div>
+        <div class="d3">3</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../lib/jquery.js"></script>
+</head>
+
+<body>
+
+    <button class="btnpost">发起Post请求</button>
+    <button class="btnget">获得数据</button>
+    <script>
+        $(function() {
+            $('.btnpost').on('click',
+                function() {
+                    $.post('http://www.liulongbin.top:3006/api/addbook', {
+                        bookname: 'cc',
+                        author: 'cc',
+                        publisher: 'cc'
+                    }, function(res) {
+                        console.log(res)
+                        $.get('http://www.liulongbin.top:3006/api/getbooks/', function(res) {
+                            console.log(res)
+                                // console.log(res.data[0])
+
+                        })
+
+                    })
+                })
+
+            $('.btnget').on('click', function() {
+                $.get('http://www.liulongbin.top:3006/api/getbooks/', function(res) {
+                    console.log(res)
+                    console.log(res.data[0])
+
+                })
+            })
+
+
+        })
+    </script>
+</body>
+
+</html>

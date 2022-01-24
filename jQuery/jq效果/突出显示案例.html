@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../jquery.js"></script>
+
+    <style>
+        div {
+            display: inline-block;
+            width: 30%;
+            height: 200px;
+            /* width: 200px; */
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script style="display: none;">
+        $(function() {
+            if (0) {
+                $('button').eq(0).click(function() {
+                    //    淡入
+                    $('div').fadeIn();
+                })
+
+                $('button').eq(1).click(function() {
+                    // 淡出
+                    $('div').fadeOut();
+                })
+
+                $('button').eq(2).click(function() {
+                    // 淡入淡出切换
+                    $('div').fadeToggle();
+
+
+                })
+
+                $('button').eq(3).click(function() {
+                    // 淡入淡出切换
+                    $('div').fadeTo(1000, .5);
+
+
+                })
+            }
+
+            $('div').hover(function() {
+                $(this).siblings().stop().fadeTo('400', .5)
+                $('script').css('display', 'none')
+            }, function() {
+                $(this).siblings().stop().fadeTo('400', 1)
+                $('script').css('display', 'none')
+            })
+        })
+    </script>
+</body>
+
+</html>

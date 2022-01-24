@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = 'cc';
+        var b = a
+        console.log(a)
+        console.log(b)
+        a = 'dd';
+        console.log(a)
+        console.log(b)
+        str = ''
+            //字符串不可变，避免大量拼接字符串
+        for (var i = 0; i < 1000000; i++) {
+            str += i
+        }
+        console.log(str)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0 auto;
+            text-align: center;
+            width: 1200px;
+        }
+        
+        .box {
+            border: 1px solid red;
+        }
+        
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .close::after {
+            content: 'x';
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            left: 337px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        淘宝二维码
+        <img src="../../img/nrk.png" alt="">
+        <i><div class="close"></div></i>
+    </div>
+    <script>
+        var x = document.querySelector('.close')
+        var box = document.querySelector('.box')
+        x.onclick = function() {
+            box.style.display = 'none'
+                // this.style.display = 'none'
+        }
+    </script>
+</body>
+
+</html>

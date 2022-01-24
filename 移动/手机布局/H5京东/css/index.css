@@ -1,0 +1,241 @@
+body {
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    background-color: #ccc;
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.5;
+    color: #666;
+    font-size: 14px;
+    height: 2000px;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.app {
+    height: 45px;
+}
+
+.app ul li {
+    float: left;
+    height: 45px;
+    background-color: #333;
+    list-style: none;
+    line-height: 45px;
+    text-align: center;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.app ul li:nth-child(1) {
+    width: 8%;
+    text-align: center;
+    line-height: 45px;
+}
+
+.app ul li:nth-child(1) img {
+    width: 10px;
+}
+
+.app ul li:nth-child(2) {
+    position: relative;
+    width: 10%;
+    /* background-color: teal; */
+}
+
+.app ul li:nth-child(2) img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    /* vertical-align: middle; */
+}
+
+.app ul li:nth-child(3) {
+    width: 57%;
+    color: #fff;
+    text-align: center;
+}
+
+.app ul li:nth-child(4) {
+    width: 25%;
+    background-color: #f63515;
+    color: #fff;
+}
+
+.search-wrap {
+    position: fixed;
+    height: 44px;
+    overflow: hidden;
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    /* background-color: teal; */
+}
+
+.search-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background-color: pink; */
+    width: 40px;
+    height: 44px;
+}
+
+.search-btn::before {
+    content: '';
+    display: block;
+    height: 18px;
+    width: 20px;
+    background: url(../img/mean.png) no-repeat;
+    background-size: 20px 18px;
+    margin: 14px 0 0 15px;
+}
+
+.search-login {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* background-color: tomato; */
+    width: 40px;
+    height: 44px;
+    color: #fff;
+    text-align: center;
+    line-height: 44px;
+}
+
+.search {
+    position: relative;
+    height: 30px;
+    background-color: #fff;
+    margin: 0 50px;
+    border-radius: 15px;
+    border: 1px solid red;
+    margin-top: 7px;
+}
+
+.jd-icon {
+    position: absolute;
+    height: 15px;
+    width: 20px;
+    top: 8px;
+    left: 13px;
+    background: url(../img/jd.png) no-repeat;
+    background-size: 20px, 15px;
+}
+
+.jd-icon::after {
+    position: absolute;
+    content: '';
+    top: -2px;
+    right: -8px;
+    display: block;
+    width: 1px;
+    height: 20px;
+    background-color: #ccc;
+}
+
+.sou {
+    position: absolute;
+    width: 18px;
+    height: 15px;
+    top: 8px;
+    left: 50px;
+    /* background-color: red; */
+    background: url(../img/jlt.png) -81px 0 no-repeat;
+    background-size: 200px;
+}
+
+.slider img {
+    width: 100%;
+}
+
+.brand {
+    /* position: relative; */
+    background-color: teal;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    /* background-color: red; */
+}
+
+.brand div {
+    /* position: absolute;
+    top: 0; */
+    width: 33.33%;
+    float: left;
+}
+
+.brand div img {
+    width: 100%;
+}
+
+nav {
+    background-color: #fff;
+}
+
+nav a {
+    float: left;
+    width: 20%;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+}
+
+nav a img {
+    width: 40px;
+    margin: 8px 0;
+}
+
+nav a i {
+    font-style: normal;
+    display: block;
+    color: black;
+}
+
+
+/* .news a:first-child {
+    width: 50%;
+}
+
+.news a:nth-child(n+2) {
+    width: 25%;
+}
+ 
+.news a {
+    float: left;
+}
+
+.news img {
+    width: 100%;
+    height: 100%;
+} */
+
+.news a:first-child {
+    width: 50%;
+}
+
+.news a:nth-child(n+2) {
+    width: 25%;
+}
+
+.news a:nth-child(2) {
+    border-left: 1px solid red;
+    border-right: 1px solid red;
+}
+
+.news a {
+    float: left;
+    box-sizing: border-box;
+}
+
+.news img {
+    width: 100%;
+    height: 94px;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            perspective: 100px;
+        }
+        
+        img {
+            display: block;
+            margin: 0px auto;
+            transition: all 2s;
+        }
+        
+        img:hover {
+            /* transform: rotateZ(-40deg);
+            transform-origin: top left; */
+            /* transform: rotate3d(1, 0, 0, 45deg) */
+            transform: rotate3d(10, 1, 1, 45deg)
+        }
+        
+        .big {
+            perspective: 500px;
+            height: 200px;
+            width: 200px;
+            background-color: teal;
+        }
+        
+        .mid {
+            perspective: 500px;
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            z-index: 2;
+            transition: all 2s;
+        }
+        
+        .mid:hover {
+            transform-origin: top left;
+            transform: rotateZ(-40deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="../../img/nrk.png" alt="" "">
+
+    <div class="big">
+
+        <div class="mid">
+            123
+        </div>
+    </div>
+</body>
+
+</html>

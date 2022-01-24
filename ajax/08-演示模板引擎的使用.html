@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/bootstrap.css">
+    <script src="./lib/jquery.js"></script>
+    <script src="lib/art.js"></script>
+</head>
+
+<body>
+
+
+
+    <!--  2 定义模板 修改类型 -->
+    <script type='text/html' id='tpl'>
+        <!-- 双括号占位符，填充数据 -->
+        <div id="title">{{title}}</div>
+        <div>姓名：<span id='name'>{{name}}</span></div>
+        <div>年龄: <span id="age">{{age}}</span></div>
+        <div>会员：<span id='isvip'>{{isvip}}</span></div>
+        <!-- 这里使用art-template处理日期 -->
+        <div>注册时间：<span id='regtime'>{{regtime|formatdata}}</span></div>
+        <div>爱好： {{if 1}} 123 {{/if}}
+            <ul>
+                {{each hobby}}
+                <li>{{$index}}{{$value}} </li>
+                {{/each}}
+
+            </ul>
+        </div>
+    </script>
+    <script>
+        $(function() {
+            var data = {
+                    title: '<h3>用户信息</h3>',
+                    name: 'cc',
+                    age: 30,
+                    isvip: true,
+                    regtime: new Date(),
+                    hobby: ['eat', 'sleep', 'sports']
+                }
+                // 1. 定义需要渲染的数据
+            var sj = {
+                name: 'cc',
+                age: 20
+            }
+
+            template.defaults.imports.formatdata = function(data) {
+                    var y = data.getFullYear()
+                    var m = data.getMonth() + 1
+                    var d = data.getDay()
+                    var z = y + '-' + m + '-' + d
+                    return z
+                }
+                // 3. 调用template,用法 template(模板id,数据)
+            var res = template('tpl', data)
+            console.log(res)
+                // 4.渲染数据到body
+            $('body').append(res)
+        })
+    </script>
+</body>
+
+</html>

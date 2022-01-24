@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jquery.js"></script>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            /* background-color: pink; */
+            margin: 0 auto;
+        }
+        
+        .side {
+            width: 60px;
+            /* background-color: red; */
+            height: 100%;
+        }
+        
+        li {
+            list-style: none;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 37.5px;
+        }
+        
+        ul {
+            height: 100%;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: space-around; */
+            margin: 0
+        }
+        
+        .im {
+            width: 240px;
+            height: 100%;
+            overflow: hidden;
+            /* background-color: blue; */
+        }
+        
+        .im img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .box>div {
+            float: left;
+        }
+        
+        .im>div {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="side">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+            </ul>
+        </div>
+
+        <div class="im">
+            <div> <img src="../img/nrk.png" alt=""></div>
+            <div> <img src="../img/grzx.png" alt=""></div>
+            <div> <img src="../img/wg.png" alt=""></div>
+            <div> <img src="../img/nrk.png" alt=""></div>
+            <div> <img src="../img/nrk.png" alt=""></div>
+            <div> <img src="../img/nrk.png" alt=""></div>
+            <div> <img src="../img/nrk.png" alt=""></div>
+            <div> <img src="../img/nrk.png" alt=""></div>
+        </div>
+    </div>
+
+
+    <script>
+        $(function() {
+            // $('.im>div').hide();
+            $('ul li').mouseover(function() {
+                $(this).css('background', 'red');
+                $(this).siblings().css('background', '');
+                index = $(this).index();
+                console.log(index)
+                if (0) {
+                    $('.im>div').eq(index).siblings().hide();
+                    $('.im>div').eq(index).show();
+
+                }
+                // 链式编程
+                $('.im>div').eq(index).show().siblings().hide();
+
+
+            })
+        })
+    </script>
+</body>
+
+</html>

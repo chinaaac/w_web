@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: pink;
+            /* visibility: ; */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <button>123</button>
+    <script>
+        var co = ['red', 'pink', 'green', 'yellow']
+        var div = document.querySelector('div')
+        var btn = document.querySelector('button')
+        console.dir(div)
+        i = 0
+        div.onclick = function() {
+
+
+            this.style.backgroundColor = co[i++]
+            this.style.width = "200px"
+
+            i >= co.length ? i = 0 : 0
+                // console.log(co.length)
+                // console.log(i)
+
+        }
+        btn.onclick = function() {
+            div.style.backgroundColor = '#ccc'
+                // div.style.display = 'none'
+            div.style.visibility = 'hidden'
+        }
+    </script>
+</body>
+
+</html>
+
+</html>

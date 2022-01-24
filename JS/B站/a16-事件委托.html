@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>我是小陈1</li>
+        <li>我是小陈2</li>
+        <li>我是小陈3</li>
+        <li>我是小陈4</li>
+        <li>我是小陈5</li>
+        <li>我是小陈6</li>
+    </ul>
+    <script>
+        //核心原理:给父节点添加事件，让子节点冒泡
+        var ul = document.querySelector('ul')
+        ul.addEventListener('click', fn)
+        ul.addEventListener('mouseover', fn1)
+        ul.addEventListener('mouseout', fn2)
+
+        function fn1(e) {
+            e.target.style.color = 'red'
+        }
+
+        function fn2(e) {
+            e.target.style.color = ''
+        }
+
+
+        function fn(e) {
+            alert(e.target.innerHTML)
+            console.log(this)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../lib/jquery.js"></script>
+</head>
+
+<body>
+    <input type="text">
+    <button class="btnpost">发起Post请求</button>
+    <button class="btnget">获得数据</button>
+    <script>
+        $(function() {
+            $('.btnpost').on('click',
+                function() {
+
+                    var inp = document.querySelector('input').value
+                    console.log(inp)
+                    inp ? 0 : inp = 1;
+                    console.log(inp)
+                    $.ajax({
+                        type: 'post',
+                        url: 'http://www.liulongbin.top:3006/api/addbook',
+                        data: {
+                            bookname: 'cc',
+                            author: 'cc',
+                            publisher: 'cc'
+                        },
+                        success: function(res) {
+                            console.log(res)
+                            $.ajax({
+                                type: 'get',
+                                url: 'http://www.liulongbin.top:3006/api/getbooks',
+                                // data: {
+                                //     id: inp
+                                // },
+                                success: function(res) {
+                                    console.log(res)
+                                }
+                            })
+                        }
+                    })
+                })
+
+            $('.btnget').on('click', function() {
+                var inp = document.querySelector('input').value
+                console.log(inp)
+                inp ? 0 : input = 1;
+
+                $.ajax({
+                    type: 'get',
+                    url: 'http://www.liulongbin.top:3006/api/getbooks',
+                    // data: {
+                    //     id: inp
+                    // },
+                    success: function(res) {
+                        console.log(res)
+                    }
+                })
+            })
+
+
+        })
+    </script>
+</body>
+
+</html>

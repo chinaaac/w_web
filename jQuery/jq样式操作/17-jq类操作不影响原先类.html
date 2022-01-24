@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../jquery.js"></script>
+
+    <style>
+        .one {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        
+        .two {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="one"></div>
+
+    <script>
+        // 原生jsclassname会覆盖原先类名，jq类操作不影响原先类名，只对指定类操作
+        var one = document.querySelector('.one');
+        // one.className = 'two'
+        $('div').addClass('two')
+        $('div').removeClass('one')
+    </script>
+</body>
+
+</html>

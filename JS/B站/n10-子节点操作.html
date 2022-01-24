@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>我是div</div>
+    <span>我是span</span>
+    <ul>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ul>
+
+    <ol>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ol>
+    <div class="box">
+        <span class="erweima"></span>
+    </div>
+
+    <script>
+        var ul = document.querySelector('ul')
+        var lis = ul.querySelectorAll('li')
+        console.log(ul.childNodes);
+        console.log(ul.childNodes[0].nodeType)
+        console.log(ul.children)
+        ul.children[0].style.color = 'red'
+    </script>
+</body>
+
+</html>

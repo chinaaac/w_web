@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery.js"></script>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+
+    <script>
+        var arr = ['red', 'pink', 'blue']
+        $(function() {
+            $('div').css('color', 'red')
+            var sum = 0
+                // 遍历 
+            $('div').each(function(i, domEle) {
+                // 回调函数第一个参数一定是索引号
+                console.log(i)
+
+                // 第一个对象一定是dom元素,无法使用jq方法
+                console.log(domEle)
+                $(domEle).css('color', arr[i])
+                sum += parseInt(domEle.innerHTML)
+            })
+            console.log(sum)
+
+            // $.each() 方法遍历元素 主要用于遍历数据，处理数据
+            $.each($('div'), function(i, ele) {
+                console.log(i)
+                console.log(ele)
+            })
+            $.each(arr, function(k, v) {
+                console.log(k, v)
+            })
+
+            $.each({
+                name: 'cc',
+                age: '18',
+                sex: 'man'
+            }, function(k, v) {
+                console.log(k, v)
+
+            })
+
+            ///////////////////////////////
+            $(arr).each(function(i, k) {
+                console.log(i)
+                console.log(k)
+            })
+        })
+    </script>
+</body>
+
+</html>

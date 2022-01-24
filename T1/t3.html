@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div:first-child {
+            width: 200px;
+            height: 100px;
+            columns: 100px 3;
+        }
+        
+        div:nth-child(2) {
+            margin-top: 50px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+        <p>[环球时报-环球网报道 记者 白云怡 赵觉珵 刘欣 曹思琪]据新华社报道，中国政府代表、外交部部长助理吴江浩同不丹政府代表、外交大臣丹迪·多吉14日通过视频方式在北京和廷布签署《关于加快中不边界谈判“三步走”路线图的谅解备忘录》。多名南亚事务专家15日在接受《环球时报》记者采访时表示，该备忘录的签署是中不解决双方边界争议道路上的里程碑，这一重要突破既为未来两国正式建交奠定基础，也将进一步削弱印度在边界问题上同中方“搅浑水”的借口。不过，印度预计不会轻易接受中不在解决边界问题上的进展，更不排除未来在谈判达到关键节点时为中不两国设置障碍。</p>
+    </div>
+
+    <div>
+        <input type="button" name="" id="save" value="保存">
+        <script>
+            var sa = document.getElementById('save')
+            sa.onclick = function() {
+                alert('点击了保存')
+            }
+        </script>
+
+        <form id='form1' method="post" action="">
+            <input type="button" name="" id="b2" value="又是一个点击">
+        </form>
+        <script>
+            form1.b2.onclick = function() {
+                alert('这是第二个的点击')
+            }
+        </script>
+        <table>
+            <tr>
+                <td>用户名：</td>
+                <td><input type="text" name="" id="" onfocus="fo()" onblur="bl()"></td>
+            </tr>
+        </table>
+        <script>
+            function fo(event) {
+                var e = window.event;
+                var obj = e.srcElement;
+                obj.style.background = '#00ff00'
+
+            }
+
+            function bl(event) {
+                var e = window.event;
+                var obj = e.srcElement;
+                obj.style.background = '#ffff00'
+
+            }
+        </script>
+        <span>请选择</span>
+        <select name="" id="s1" onchange="chan()">
+            <option value="a">a</option>
+            <option value="b">b`</option>
+            <option value="c">c</option>
+        </select>
+        <script>
+            function chan(event) {
+                var e = window.event;
+                var obj = e.srcElement;
+                obj.style.background = "#ccffcc"
+            }
+        </script>
+
+        <form id='form2' method="post" action="" onreset="return res()" onsubmit="return sum1()">
+            <input type="text" name="" id="b3" value="">
+
+            <input type="reset" name="" id="">
+            <input type="submit" name="" id="">
+        </form>
+        <script>
+            function res() {
+                if (window.confirm('重置吗？')) return 1;
+                else return 0;
+            }
+
+            // function sum1() {
+            //     var T = 1;
+            //     var e = window.event
+            //     var obj = e.srcElement;
+            //     alert(obj.b3.value)
+            //     alert(form2.b3.value)
+            //     if (obj.b3.value == "") {
+            //         T = 0;
+            //     }
+            //     if (!T) {
+            //         alert('内容有空值 ')
+            //     }
+        </script>
+    </div>
+
+    <div id='d3' style="width: 200px; height: 200px; background: #ffccff;">
+        <input type="button" name="" id="'d3'1" value="更换背景red" onclick="change()">
+        <input type="button" name="" id="'d3'2" value="更换背景green" onclick="change2()">
+
+        <script>
+            var n = 0
+
+            function change() {
+
+                var co = new Array('yellow', 'green', 'pink', 'red', 'wihte')
+                if (n == (co.length - 1)) {
+                    n = 0;
+                    window.open('', n, '123')
+                }
+                n++;
+                document.getElementById('d3').style.backgroundColor = co[n]
+            }
+
+
+            function change2() {
+                var c = document.getElementById('d3').style.backgroundColor = "green";
+            }
+
+            document.onmousemove = movep;
+            var x = 0,
+                y = 0;
+
+            function movep() {
+                x = window.event.x
+                y = window.event.y
+                a = window.status = 'mouse is' + x + ' ,' + y
+                console.log(a)
+
+                ref = function() {
+                    if (window.event.keyCode == 97) {
+                        location.reload();
+                    }
+                }
+                t1 = function() {
+                    alert('test')
+                }
+                ref();
+                // t1()
+
+
+
+            }
+        </script>
+
+        <img src="dmtg.png" alt="" onload="onl()" onmouseover="ove()" onmouseout=ou() name='img1'>
+        <script>
+            var h = img1.height
+
+            var w = img1.width
+            alert(h + w)
+
+            function onl() {
+                if (img1.height >= h) {
+                    img1.hight = h - 100
+                    img1.width = w - 100
+                }
+                if (img1.height < h) {
+                    img1.hight = h
+                    img1.width = w
+                }
+            }
+
+            function ou() {
+
+            }
+        </script>
+    </div>
+</body>
+
+</html>

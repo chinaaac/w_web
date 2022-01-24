@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input:last-of-type {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" value="手机">
+    <input type="text" name="" id="" placeholder="手机">
+
+    <script>
+        var va = document.querySelector('input')
+        var pl = document.querySelector('input:last-of-type')
+        console.log(va + pl)
+
+        va.onfocus = function() {
+            this.tmp = '手机'
+            this.style.color = 'red'
+            this.nr = this.value
+                // console.log(this.tmp)
+                // console.log(this)
+            this.value == this.tmp ? this.value = '' : this.value = this.nr
+        }
+
+        va.onblur = function() {
+            this.value == '' ? this.value = this.tmp : 0
+            this.style.color = '#ccc'
+        }
+        pl.onfocus = function() {
+            this.placeholder = ''
+        }
+    </script>
+</body>
+
+</html>

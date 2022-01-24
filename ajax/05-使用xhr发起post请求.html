@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script>
+        var ra = Math.round(Math.random() * 100 % 100)
+        console.log(ra)
+        ra = ra.toString
+
+        // 1.创建实例
+        var xhr = new XMLHttpRequest()
+            //2. 调用open填写请求参数
+        xhr.open('post', 'http://www.liulongbin.top:3006/api/addbook')
+
+        // 3. 填写content-type固定写法
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+
+        //4.填写提交参数
+        xhr.send(`bookname=cc&author=ccc&publisher=ccc`)
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                console.log(xhr.responseText)
+            }
+        }
+    </script>
+</body>
+
+</html>

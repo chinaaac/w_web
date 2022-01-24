@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p onclick="uu()">123</p>
+    <a href="https://baidu.com" onclick="uu()">aaa</a>
+    <a href="t2.html" onclick="uu()">aa</a>
+    <script>
+        var arr = new Array('red', 'pink', 'skyblue', 'yellow', 'purple', '#ff00cc')
+        var n = 0
+
+        function change() {
+            if (n == arr.length - 1) n = 0
+            document.bgColor = arr[n]
+            document.fgColor = arr[n + 1]
+            n++
+            console.log(document.URL)
+            setTimeout("change()", 1000)
+
+
+        }
+        change()
+
+        function uu() {
+            console.log(document.URL)
+        }
+    </script>
+</body>
+
+</html>

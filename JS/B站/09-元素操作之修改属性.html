@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <button>图片1</button>
+    <button>图片2</button>
+    <img src="../../img/nrk.png" alt="nrk">
+    <script>
+        var btns = document.querySelectorAll('button')
+        var p1 = btns[0]
+        var p2 = btns[1]
+        var img = document.querySelector('img')
+
+        p1.onclick = function() {
+            img.src = "../../img/nrk.png";
+            img.title = this.innerText
+
+        }
+        p2.onclick = function() {
+            img.src = "../../img/wg.png"
+            img.title = this.innerText
+                // console.log(this.innerText)
+        }
+    </script>
+</body>
+
+</html>

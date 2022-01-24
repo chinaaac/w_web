@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li>原先的li</li>
+    </ul>
+    <div>原先的div</div>
+
+    <script>
+        $(function(params) {
+            //1. 创建元素
+            var li = $('<li>我是后来的li</li>')
+            var div2 = $('<div>我是后来的div</div>')
+                // 2. 添加元素
+                // a 内部添加，添加到元素内部的最后面
+            $('ul').append(li)
+                // b 内部添加，添加到元素内部的最前面
+            $('ul').prepend(li)
+
+            // c 外部添加，e.after(标签) 放到e外部的后面
+            $('div').before(div2)
+                // d 外部添加，e.before(标签) 放到e外部的前面面
+            $('div').after(div2)
+
+            // 3. 删除元素
+            $('ul').remove()
+
+            // 清空节点里的子节点,下面两个等价
+            $('ul').empty()
+            $('div').html('')
+        })
+    </script>
+</body>
+
+</html>

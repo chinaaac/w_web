@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Star(uname, age) {
+            this.name = uname
+            this.age = age
+
+        }
+        Star.prototype.sing = function() {
+            console.log('sing')
+        }
+        Object.prototype.sex = 'man3'
+        Star.prototype.sex = 'man2'
+
+        var ldh = new Star('ldh', 18)
+            // var my = new Star('cc', 18)
+
+        ldh.sex = 'man'
+
+        console.log(ldh.toString())
+        console.dir(Star)
+        console.log(Object.prototype)
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        try {
+            var a = 0;
+            var b = 1 / a;
+            if (b == Infinity) {
+                throw new Error('除数不可以为0')
+            }
+        } catch (exception) {
+            alert(exception.message)
+        }
+
+        try {
+            var a = 'hello'
+            document.write(a.charat(2))
+        } catch (exception) {
+            alert('运行时有异常')
+        } finally {
+            alert('执行结束')
+        }
+
+        try {
+            var a = 'hello'
+            document.write(a.charAt(2))
+        } catch (exception) {
+            alert(exception.message + '<br>' + exception.name)
+        } finally {
+            alert('执行结束')
+        }
+    </script>
+</body>
+
+</html>
+
+</html>

@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 63%;
+    color: gray;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: gray;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+em,
+i {
+    font-style: normal;
+}
+
+a:hover {
+    color: red;
+}
+
+button,
+input {
+    border: 0;
+    outline: none;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fa {
+            position: relative;
+            background-color: pink;
+            width: 200px;
+            height: 200px;
+        }
+        
+        div {
+            text-align: center;
+        }
+        
+        .son {
+            position: absolute;
+            background-color: orange;
+            width: 100px;
+            height: 100px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fa">
+        <div class="son">son盒子</div>
+    </div>
+
+    <script>
+        //js只能执行捕获或者冒泡其中一个阶段
+        //onclick和attachevent只能得到冒泡
+        //addEventListener的第三个参数是1获取捕获阶段,默认或者省略为冒泡
+        if (0) {
+            var son = document.querySelector('.son')
+            var fa = document.querySelector('.fa')
+            son.addEventListener('click', function() {
+                alert('son')
+            }, 1)
+            fa.addEventListener('click', function() {
+                alert('fa')
+            }, 1)
+        }
+
+
+        /////////////////////
+        var son = document.querySelector('.son')
+        var fa = document.querySelector('.fa')
+        son.addEventListener('click', function(e) {
+            alert('son')
+                //兼容性问题
+            e.stopPropagation();
+            //ie写法
+            e.cancelBubble = true;
+        }, 0)
+        fa.addEventListener('click', function() {
+            alert('fa')
+        }, 0)
+        document.body.addEventListener('click', function() {
+            alert('body')
+        }, 0)
+    </script>
+</body>
+
+</html>

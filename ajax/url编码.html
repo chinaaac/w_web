@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var sta = '我是陈露'
+        var en = encodeURI(sta)
+        var de = decodeURI(en)
+        var ll = decodeURI('%E9%9C%B2')
+        document.write(en + de + ll)
+    </script>
+</body>
+
+</html>

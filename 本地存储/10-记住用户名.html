@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id='un'>
+    <input type="checkbox" name="" id="kk"> 记住用户名
+
+    <script>
+        var un = document.querySelector('#un')
+        var kk = document.querySelector('#kk')
+
+        if (localStorage.getItem('un')) {
+            un.value = localStorage.getItem('un')
+            kk.checked = 1
+        }
+
+
+        kk.addEventListener('change', function() {
+            if (kk.checked == 1) {
+                localStorage.setItem('un', un.value)
+
+            } else {
+                localStorage.removeItem('un')
+
+            }
+        })
+        un.addEventListener('change', function() {
+            kk.checked == 1
+            localStorage.setItem('un', un.value)
+        })
+    </script>
+</body>
+
+</html>

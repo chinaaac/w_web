@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Star(uname, age) {
+            this.name = uname
+            this.age = age
+
+        }
+        Star.prototype.sing = function() {
+            console.log('sing')
+        }
+
+        var ldh = new Star('ldh', 18)
+        var my = new Star('cc', 18)
+        ldh.sing()
+        console.log(ldh) //对象身上系统自己添加一个__proto__指向prototype原型对象
+
+        console.log(ldh.__proto__ === Star.prototype) //方法查找规则，首先看ldh对象是否有sing方法，如果有就执行对象上的sing
+            //如果没有sing就去__proto__去查找sing
+        console.log(ldh.__proto__)
+        console.log(my.__proto__)
+    </script>
+
+</body>
+
+</html>

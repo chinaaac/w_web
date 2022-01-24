@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var date = new Date();
+        console.log(date.getHours())
+        console.log(date.getMinutes())
+        console.log(date.getSeconds())
+        a = ':'
+
+        function getTime() {
+            var date = new Date();
+
+            function add0(num) {
+                return '0' + num
+            }
+
+            h = date.getHours()
+            if (date.getHours() < 10) {
+                m = add0(getHours())
+            }
+
+            m = date.getMinutes()
+            if (date.getMinutes() < 10) {
+                // m = add0(getMinutes())
+                m = add0(date.getMinutes());
+            }
+            s = date.getSeconds()
+
+            s = s < 10 ? '0' + s : s
+
+            return h + a + m + a + s
+        }
+        a = getTime()
+        console.log(a)
+    </script>
+</body>
+
+</html>

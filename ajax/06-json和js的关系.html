@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 这是js对象
+        var obj = {
+                name: 'cc',
+                age: 18
+            }
+            // 这是一个json字符串，本质是一个字符串
+        var json = '{"a":"hello","b":"notok"}'
+
+        console.log(json)
+            // json对象转换为js对象
+        json = JSON.parse(json)
+
+        console.log(typeof json)
+        console.log(json)
+
+        // json转json字符串
+        console.log(JSON.stringify(json))
+    </script>
+</body>
+
+</html>

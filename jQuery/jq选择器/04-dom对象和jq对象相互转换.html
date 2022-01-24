@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+</head>
+
+<body>
+    <video src="../../../My/MV/鸿门宴.ts"></video>
+    <script>
+        //1 . dom对象转换为jq对象
+        //(1) 直接获取视频，得到的就是sq对象
+        $('video');
+        //(2)已经使用原生对象获取的dom
+        var myv = document.querySelector('video');
+
+        $(myv)
+
+        //2. jq对象转dom
+        $('video')[0].play();
+        $('video').get(0).play()
+    </script>
+</body>
+
+</html>

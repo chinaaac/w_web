@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../jquery.js"></script>
+</head>
+
+<body>
+    <script>
+        $(function() {
+            if (0) {
+                var targ = {}
+                var obj = {
+                        id: 1,
+                        age: 18,
+                        name: 'cc'
+                    }
+                    // $.extend(目标对象，源对象)
+                $.extend(targ, obj)
+                console.log(targ)
+            }
+            // 如果目标对象存在相同的数据（k相同），数据会被覆盖。
+            // 如果源对象没有这个数据（k），内容会保留，数据合并
+
+
+            /////////////////////
+            //浅拷贝
+            if (0) {
+                var targ = {
+                    id: 2,
+                    c: 'c',
+                    msg: {
+                        sex: 'm'
+                    }
+
+                }
+                var obj = {
+                        id: 1,
+                        age: 18,
+                        msg: {
+                            name: 'cc'
+                        }
+                    }
+                    // $.extend(目标对象，源对象)
+                    // 默认拷贝模式为浅拷贝，复杂数据类型只拷贝数据地址，修改任意一个复杂数据类型，所有数据跟随一起变化
+                $.extend(targ, obj)
+                targ.msg.name = 'dd'
+                console.log(targ)
+                console.log(obj)
+
+
+
+            }
+
+            // 深拷贝
+            // 内容完整赋值一份
+
+            if (1) {
+                var targ = {
+                    id: 2,
+                    c: 'c',
+                    msg: {
+                        sex: 'm',
+                        t: 't'
+                    }
+
+                }
+
+                var kk = {}
+                var obj = {
+                        id: 1,
+                        age: 18,
+                        msg: {
+                            name: 'cc',
+                            sex: 'z'
+                        }
+                    }
+                    // $.extend(目标对象，源对象)
+                    // 源对象没有的东西会合并，源对象有的会覆盖
+                $.extend(true, targ, obj)
+                $.extend(true, kk, obj)
+                targ.msg.name = 'dd'
+                console.log(targ)
+                console.log(obj)
+
+                kk.msg.name = 'ff'
+                console.log(kk)
+
+
+
+            }
+
+        })
+    </script>
+</body>
+
+</html>

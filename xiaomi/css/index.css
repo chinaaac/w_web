@@ -1,0 +1,202 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.w {
+    width: 1226px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: #b0b0b0;
+    font-size: 12px;
+}
+
+.top {
+    height: 40px;
+}
+
+li {
+    list-style: none;
+}
+
+.hr ul li,
+.hl ul li {
+    float: left;
+    line-height: 40px;
+    padding: 0 8px;
+}
+
+.hr ul li,
+.hl ul li {
+    position: relative;
+}
+
+.hr ul li:after,
+.hl ul li:after {
+    position: absolute;
+    display: inline-block;
+    content: '';
+    height: 12px;
+    width: 1px;
+    background-color: #ccc;
+    top: 17px;
+    right: 0;
+}
+
+.hr ul li:last-child::after,
+.hl ul li:last-child::after {
+    content: '';
+    height: 0px;
+    width: 0px;
+    background-color: #ccc;
+}
+
+.hr ul li:nth-child(3)::after {
+    content: '';
+    height: 0px;
+    width: 0px;
+    background-color: #ccc;
+}
+
+header {
+    height: 40px;
+    background-color: #333;
+}
+
+.hr {
+    float: right;
+}
+
+.hr ul li:last-child>a {
+    display: block;
+    height: 40px;
+    background-color: #424242;
+    text-align: center;
+    line-height: 40px;
+    padding: 0 5px;
+}
+
+.logh {
+    position: relative;
+    clear: both;
+    height: 100px;
+    overflow: hidden;
+}
+
+.logo {
+    float: left;
+}
+
+.logo img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 56px;
+}
+
+.logm {
+    float: left;
+}
+
+.logm ul li {
+    float: left;
+}
+
+
+/* .logh .logm ul li:hover {
+        color: red;
+    } */
+
+.logm ul {
+    position: absolute;
+    margin-left: 250px;
+}
+
+.logm a {
+    display: block;
+    font-size: 16px;
+    line-height: 100px;
+    color: black;
+    padding: 0 10px
+}
+
+.logm a:hover {
+    color: red
+}
+
+.search input {
+    height: 48px;
+    border: 1px solid #e0e0e0;
+}
+
+.search {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.search input:last-child {
+    height: 48px;
+    width: 48px;
+    transform: translatex(-1px) translatey(1px);
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+
+/* nav {
+        height: 460px;
+        background-color: teal;
+    } */
+
+.bt {
+    position: relative;
+    height: 460px;
+    background: url('https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/527f28ff20aa102b0463704b244db01f.jpg?thumb=1&w=2115&h=793&f=webp&q=90') center center;
+    background-size: 1226px 460px;
+}
+
+.bt>a {
+    display: block;
+    height: 100%;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    color: white;
+}
+
+nav ul {
+    background: rgba(255, 255, 255, .5);
+    height: 460px;
+    width: 250px;
+}
+
+nav ul li {
+    padding: 0px 15px;
+}
+
+nav ul li:first-of-type {
+    /* margin-top: 20px */
+}

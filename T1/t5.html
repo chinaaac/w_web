@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <a href="#">123</a>
+        <a href="" id='bgc' onclick="bgc()" ondblclick="fgc()">bgc</a>
+        <a href="" id='fgc'>fgc</a>
+    </div>
+    <script>
+        document.alinkColor = 'red'
+        document.vlinkColor = 'yellow'
+        document.linkColor = 'pink'
+            // var a = document.getElementById('bgc')
+            // a.style.fontSize = '50px'
+            // a.onclick = document.bgColor = 'red'
+            // a.ondblclick = document.fgColor = 'blue'
+        function bgc() {
+            alert(1)
+        }
+        document.bgColor = 'pink'
+        alert(document.bgColor)
+    </script>
+</body>
+
+</html>

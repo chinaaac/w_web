@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <script>
+            document.write(123)
+            document.write(456)
+            document.writeln(789)
+            document.writeln(960)
+        </script>
+    </div>
+    <pre>
+        <script>
+            document.write(123)
+            document.write(456)
+            document.writeln(789)
+            document.writeln(960)
+        </script>
+    </pre>
+
+
+    <div>
+        <script>
+            var n = 1
+
+            function add() {
+                var cc = document.createElement('input')
+                cc.type = 'text'
+                cc.value = '123'
+                cc.id = 't' + n
+                n++
+                if (n > 10) {
+                    cc.value = '10'
+                }
+                document.body.append(cc)
+
+            }
+
+            function chan() {
+                var a = document.getElementById('t1')
+                a.value = '999'
+            }
+        </script>
+        <form action="" name='form1'>
+            <input type="button" name="" id="" value="add" onclick="add()">
+            <input type="button" name="" id="" value="chance" onclick="chan()">
+        </form>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../jquery.js"></script>
+</head>
+
+<body>
+
+    <div>
+        <button>-</button>
+        <input type="text" value="1">
+        <button>+</button>
+    </div>
+    <div>
+        <button>-</button>
+        <input type="text" value="1">
+        <button>+</button>
+    </div>
+
+    <script>
+        $('div').children('button:first-child').click(function() {
+
+            console.log($(this).siblings('input').val())
+            var ls = parseInt($(this).siblings('input').val())
+            if (ls > 1) {
+
+                ls--
+                $(this).siblings('input').val(ls)
+            } else {
+                alert('不能再减了')
+            }
+
+        })
+        $('div').children('button:last-child').click(function() {
+
+
+            console.log($(this).siblings('input').val())
+            var ls = parseInt($(this).siblings('input').val())
+            console.log(typeof ls)
+
+            console.log(ls++)
+                // console.log(typeof $(this).siblings('input').val())
+                // var ls = parseInt($(this).siblings('input').val())
+                // console.log($(this).siblings('input').val(ls))
+            $(this).siblings('input').val(ls)
+        })
+    </script>
+
+</body>
+
+</html>

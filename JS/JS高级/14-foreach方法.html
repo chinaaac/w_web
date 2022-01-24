@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //foreach使用方法
+
+        var arr = [4, 6, 2, 1]
+        arr.forEach(function(value, index, arr) {
+                console.log('元素：' + value)
+                console.log('index is：' + index)
+                console.log('数组本身' + arr)
+            })
+            //ffilter 数组筛选大于3的
+        var newarr = arr.filter(function(value, index) {
+            return value >= 4 || value % 2 == 0;
+        })
+        console.log(newarr)
+
+        //some 是否有满足元素的内容,是否有大于5的元素存在，返回1和0,找到第一个就终止循环
+
+
+        var flag = arr.some(function(value, index, arr) {
+            return value > 50;
+        })
+        console.log(flag)
+
+        var co = ['red', 'bule', 'yellow']
+        var fl = co.some(function(value, index, co) {
+            return value == 'red'
+        })
+        console.log(fl)
+    </script>
+</body>
+
+</html>
