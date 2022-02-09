@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <script>
+    <!-- <script>
         //foreach使用方法
 
         var arr = [4, 6, 2, 1]
@@ -37,6 +37,29 @@
             return value == 'red'
         })
         console.log(fl)
+    </script> -->
+
+    <script>
+        var arr = [1, 2, 3, 6, 58, 4, 7]
+        var sum = 0
+        arr.forEach(function(value, index, arr) {
+            console.log(value, index, arr)
+            sum += value
+        })
+        console.log(sum)
+
+        // 筛选数组
+
+        var newa = arr.filter(function(value, index, arr) {
+            return value >= 5 || value % 2 == 0
+        })
+        console.log(newa)
+
+        //查找满足指定条件,返回真假
+        var tmp = arr.some(function(v, i, a) {
+            return v > 10
+        })
+        console.log(tmp)
     </script>
 </body>
 

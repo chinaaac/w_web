@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <script>
+    <!-- <script>
         //借用父构造函数继承属性  
         function FF(uname, age) {
             this.uname = uname;
@@ -39,8 +39,35 @@
         console.log(SS.prototype.constructor)
         son.sing()
         son.exam()
-    </script>
+    </script> -->
 
+
+    <script>
+        function fa(uname, age) {
+
+            this.uname = uname;
+            this.age = age
+        }
+
+        fa.prototype.money = function() {
+            console.log('100000')
+        }
+
+        function son(uname, age, sco) {
+            fa.call(this, uname, age)
+            this.sco = sco
+        }
+        son.prototype = new fa()
+        son.prototype.constructor = son
+        son.prototype.exam = function() {
+            console.log('kaoshi+haizi')
+        }
+        var ss = new son('cc', 18, 100)
+        console.log(ss)
+        console.log(ss.money())
+        console.log(fa.prototype)
+        console.log(son.prototype.constructor)
+    </script>
 </body>
 
 </html>

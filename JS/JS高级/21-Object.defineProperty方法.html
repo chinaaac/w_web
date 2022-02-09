@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Object.defineProperty() 定义新属性或者修改原有属性
+        var obj = {
+            id: 1,
+            pname: 'mi',
+            pri: '1999'
+        }
+        obj.num = 1000
+        obj.pri = 99
+
+        // Object.definePerperty(obj,属性，对象) 修改属性参数
+        // 对象{value:8,writable:false,enumerable:flase,configruable:false}
+        // writable是否可重写，enumerable是否可枚举，configurable是否可删除或者再次修改
+        Object.defineProperty(obj, 'pri', {
+            value: 10000,
+        })
+        Object.defineProperty(obj, 'cc', {
+            value: 10000,
+            enumerable: 1
+        })
+        Object.defineProperty(obj, 'id', {
+            //不许修改属性值,false不许修改，true允许 
+            writable: 0
+        })
+
+        Object.defineProperty(obj, 'addr', {
+            value: "cn",
+            writable: 0,
+            enumerable: false, //默认false 不被遍历
+            configurable: false //默认false 不允许删除,不许修改特性
+        })
+        obj.id = 10
+        delete obj.addr
+        delete obj.id
+
+        // 这里报错，不允许修改属性因为上面设置过configurable：false
+        // Object.defineProperty(obj, 'addr', {
+        //     value: "cnn",
+        //     writable: 1,
+        //     enumerable: 1, //默认false 不被遍历
+        //     configurable: 1 //默认false 不允许删除,不许修改特性
+        // })
+        console.log(obj)
+        console.log(Object.keys(obj))
+        console.log(Object.values(obj))
+    </script>
+</body>
+
+</html>

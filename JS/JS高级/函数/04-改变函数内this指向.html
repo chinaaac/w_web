@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="a1">123</button>
+    <script>
+        // 改变函数内部this 指向 三种方法，call(),apply(),bind()
+
+
+        // call 的主要作用是可以实现继承
+        var o = {
+            name: 'andy'
+        }
+
+        function fn() {
+            console.log(this)
+        }
+        fn.call()
+        fn.call(o)
+
+
+        function Fa(uname, age, sex) {
+            this.uname;
+            this.age = age;
+            this.sex = sex;
+        }
+
+        function Son(uname, age, sex) {
+            Fa.call(this, uname, age, sex)
+        }
+        var son = new Son('出来', 18, 'man')
+        console.log(son)
+
+        // apply 同call 传值必须用数组
+        // apply 的主要应用 比如我们可以利用apply借助数学内置对象求最大值
+
+        var oo = {
+            name: 'andy'
+        }
+
+        function fnn(arr, a) {
+            console.log(this)
+            console.log(arr, a)
+            console.log()
+        }
+
+        fnn.apply(oo)
+        fnn.apply(oo, ['pink', 'red'])
+
+        var ar = [1, 2, 6, 99, 10]
+        console.log(Math.min.apply(Math, ar))
+        var a = Math.max.apply(Math, ar)
+        console.log(a)
+
+        // bind() 不会调用该函数，方法同call
+        // 返回的是原函数改变this之后的新函数
+        // 如果有的函数不需要立即调用 用bind
+
+
+        var oaa = {
+            name: 'andy'
+        }
+
+        function foa(a, b) {
+            console.log(this)
+            console.log(a + b)
+        }
+
+        var a = foa.bind(oaa, 1, 2)
+        console.log(a)
+
+        var b1 = document.querySelector('#a1')
+        b1.addEventListener('click', function() {
+            this.disabled = true
+
+            setTimeout(function() {
+
+                this.disabled = false //这里的this指向window
+                console.log(this)
+
+            }.bind(this), 3000)
+        })
+    </script>
+</body>
+
+</html>
