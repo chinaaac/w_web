@@ -82,10 +82,10 @@
 
             setTimeout(function() {
 
-                this.disabled = false //这里的this指向window
-                console.log(this)
+                    this.disabled = false //这里的this默认指向window
+                    console.log(this)
 
-            }.bind(this), 3000)
+                }.bind(this), 3000) //修改默认的定时器this指向 为b1的
         })
     </script>
 </body>
