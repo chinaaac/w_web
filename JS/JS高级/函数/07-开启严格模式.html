@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        a = 5
+        console.log(a)
+    </script>
+    <script>
+        (function() {
+            'use strict';
+            a = 5
+            console.log(a)
+        })()
+    </script>
+
+    <script>
+        // 为某个函数开启严格模式
+
+        function fn() {
+            'use strict'
+            c = 6
+            console.log(c)
+        }
+        fn()
+    </script>
+
+</body>
+
+</html>

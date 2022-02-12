@@ -10,6 +10,8 @@
 
 <body>
     <button id="a1">123</button>
+    <button id="a2">123</button>
+    <button id="a3">123</button>
     <script>
         // 改变函数内部this 指向 三种方法，call(),apply(),bind()
 
@@ -87,6 +89,16 @@
 
                 }.bind(this), 3000) //修改默认的定时器this指向 为b1的
         })
+
+        var btns = document.querySelectorAll('button')
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].onclick = function() {
+                this.disabled = 1
+                setTimeout(function() {
+                    this.disabled = 0
+                }.bind(this), 3000)
+            }
+        }
     </script>
 </body>
 

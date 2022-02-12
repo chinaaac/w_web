@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../../../jQuery/jq事件/js/jquery-1.11.0.min.js"></script>
+    <style>
+        div {
+            background-color: red;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 高阶函数，函数作为参数传递
+        function fn(a, b, cb) {
+            console.log(a + b)
+            cb && cb()
+        }
+        fn(1, 2, function() {
+            alert('执行完成')
+        })
+
+        // $('div').hide()
+        console.log('#########')
+        console.log($('div'))
+
+        $('div').animate({
+            left: "800px"
+        })
+    </script>
+
+</body>
+
+</html>

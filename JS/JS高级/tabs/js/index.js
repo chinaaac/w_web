@@ -1,9 +1,8 @@
-var that
 class Tab {
 
     constructor(id) {
         this.i = 3
-        that = this
+
         this.main = document.querySelector(id)
 
         this.add = this.main.querySelector('.tabadd')
@@ -12,12 +11,12 @@ class Tab {
     }
     init() {
         this.updateNode()
-        this.add.onclick = this.addTab
+        this.add.onclick = this.addTab.bind(this.add, this)
 
         for (var i = 0; i < this.lis.length; i++) {
             this.lis[i].index = i
-            this.lis[i].onclick = this.toggleTab
-            this.remove[i].onclick = this.removeTab
+            this.lis[i].onclick = this.toggleTab.bind(this.lis[i], this)
+            this.remove[i].onclick = this.removeTab.bind(this.remove[i], this)
             this.spans[i].ondblclick = this.editTab
             this.sections[i].ondblclick = this.editTab
         }
@@ -31,7 +30,7 @@ class Tab {
         this.spans = this.main.querySelectorAll('.fisrstnav li span:first-child')
 
     }
-    toggleTab() {
+    toggleTab(that) {
         that.clearClass()
         this.className = 'liactive'
         that.sections[this.index].className = 'conactive'
@@ -44,7 +43,7 @@ class Tab {
         }
     }
 
-    addTab() {
+    addTab(that) {
         that.updateNode()
         that.clearClass()
             // 创建 li和section
@@ -60,7 +59,7 @@ class Tab {
 
 
 
-    removeTab(e) {
+    removeTab(that, e) {
         // 防止冒泡
         e.stopPropagation()
         var index = this.parentNode.index

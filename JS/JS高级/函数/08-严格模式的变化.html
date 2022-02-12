@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        'use strict'
+        //1. 变量必须先申明后使用
+        var num
+        num = 10
+
+        console.log(num)
+
+        // 2。 严禁删除申明过的变量
+
+        var sz = 101
+            // delete sz
+        console.log(sz)
+
+        //3. thi指向undefined
+
+        function fn() {
+            console.log(this)
+        }
+
+        fn()
+
+        // 4. 如果构造杉树不加new调用，this会报错
+
+        function St() {
+            this.sex = 'man'
+        }
+        // St();
+        // console.log()
+        // console.log(window.sex)
+        console.log('############');
+        var ldh = new St()
+        console.log(ldh);
+
+        console.log(ldh.sex)
+
+        // 5.定时器this指向window
+
+        setTimeout(function() {
+            console.log(this)
+        }, 3000);
+
+        // 6. 参数不能重名
+
+        if (0) {
+            // function f2(a, a) {
+            //     console.log(a + a)
+            // }
+
+            // f2(2, 4)
+        }
+        //7. 非函数代码块不能申明函数，即不能再if或者for之类的内容中写函数
+        //8. 不允许8进制
+    </script>
+
+</body>
+
+</html>
