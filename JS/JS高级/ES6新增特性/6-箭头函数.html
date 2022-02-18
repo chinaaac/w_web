@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const fn = () => {
+            console.log(1123)
+        }
+        fn()
+            // 如果箭头函数只有一句代码，且执行结果就是返回值，可以省略大括号
+        const fn2 = () => 2
+        console.log(fn2())
+
+
+        const sum = (n1, n2) => n1 + n2
+
+
+        console.log(sum(8, 2))
+
+
+        // 如果形参只有一个，形参外小括号可以省略
+
+        const fn3 = v => v
+        console.log(fn3(5))
+    </script>
+</body>
+
+</html>

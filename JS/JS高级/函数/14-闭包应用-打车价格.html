@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //闭包应用-计算打车价格
+        //起步价13(3km)，之后每公里add 5cny，用户输入公里数就可以计算打车价格
+        //如果拥堵，总价add 10 cny
+
+        if (1) {
+
+
+
+
+            var car = (function() {
+                var st = 13 //起步价
+                var total = 0 //总价
+                return {
+                    price: function(km) {
+                        //正常价格
+
+                        if (km <= 3) {
+                            total = st
+                        } else {
+                            total = (km - 3) * 5 + 13
+
+                        }
+                        return total
+
+                    },
+                    yd: function(ff) {
+                        // 拥堵后价格
+                        return ff ? total += 10 : total
+                    }
+                }
+
+            })()
+            a = car.price(5);
+            b = car.yd(1)
+            console.log(b)
+        }
+    </script>
+
+</body>
+
+</html>

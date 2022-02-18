@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 匹配某个模式出现的次数
+
+        // var reg = /^a$/
+
+        // 表示任意次数用 *
+        var reg = /^a*$/
+        console.log(reg.test(''))
+        console.log(reg.test('a'))
+        console.log(reg.test('aa'))
+
+        // 表示大于等于1次
+        var reg1 = /^a+$/
+        console.log(reg1.test(''))
+        console.log(reg1.test('a'))
+        console.log(reg1.test('aa'))
+
+        // 表示 1||0 次  ？
+
+        var reg2 = /^a?$/
+        console.log(reg2.test(''))
+        console.log(reg2.test('a'))
+        console.log(reg2.test('aa'))
+
+        // 表示重复3次  {3}
+        var reg3 = /^a{3}$/
+        console.log(reg3.test(''))
+        console.log(reg3.test('a'))
+        console.log(reg3.test('aaa'))
+
+        // 表示重复至少4次{4,}
+        var reg4 = /^a{4,}$/
+        console.log(reg4.test(''))
+        console.log(reg4.test('a'))
+        console.log(reg4.test('aaaa'))
+
+        // 表示重复m，到n次
+        var reg5 = /^a{2,6}$/
+        console.log(reg5.test(''))
+        console.log(reg5.test('a'))
+        console.log(reg5.test('aaaa'))
+    </script>
+</body>
+
+</html>

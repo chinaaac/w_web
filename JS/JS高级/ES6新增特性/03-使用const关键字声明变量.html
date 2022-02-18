@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //使用const 关键字声明的变量具有块级作用域
+
+        if (1) {
+            const a = 10
+
+            if (1) {
+                const a = 20
+                console.log(a)
+            }
+            console.log(a)
+        }
+        // console.log(a)
+
+
+        // 声明必须赋值否则报错
+        // const pi
+
+        const pi = 3.14
+
+
+        //内存地址不可更改，常量声明后值不可更改
+        // 复杂数据类型不可以修改地址，内部值可以修改。普通数据类型不可以修改值
+        // pi = 123     报错
+
+        const ary = [200, 100]
+
+        ary[0] = 123;
+        console.log(ary)
+
+        // ary = [1, 2]  这里报错
+    </script>
+
+</body>
+
+</html>

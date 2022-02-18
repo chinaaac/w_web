@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var reg = /^[a-zA-Z0-9_-]$/
+
+        var a = reg.test('a')
+
+        console.log(a)
+
+        console.log('--------------------------')
+        var reg1 = /^[^a-zA-Z0-9_-]$/ //第二个"^"表示取反，中括号里有"^"表示取反
+
+        a = reg1.test('|')
+        console.log(a)
+    </script>
+</body>
+
+</html>

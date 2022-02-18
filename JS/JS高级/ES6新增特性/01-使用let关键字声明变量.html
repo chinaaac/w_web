@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        if (1) {
+            let num = 100;
+            var abc = 2
+        }
+
+        console.log(abc)
+
+        // console.log(num)
+
+        for (let i = 0; i < 10; i++) {
+            console.log(i)
+        }
+
+        for (var i = 0; i < 10; i++) {
+            console.log(i)
+        }
+        console.log(i)
+
+        // 2. 没有变量提升
+        if (0) {
+            console.log(a)
+
+            let a = 10
+        }
+        // 具有暂时性死区
+        var tmp = 123
+        if (1) {
+            tmp = 'abc' //寻找当前作用域变量，和当前租用与绑定了
+                // let tmp
+        }
+        // console.log(tmp) 这里报错
+
+
+        let arr = []
+        for (let i = 0; i < 2; i++) {
+            arr[i] = function() {
+                console.log(i)
+            }
+        }
+        arr[0]()
+        arr[1]()
+        var arr1 = []
+        for (var i = 0; i < 2; i++) {
+            arr1[i] = function() {
+                console.log(i)
+            }
+        }
+        arr1[0]()
+        arr1[1]()
+    </script>
+</body>
+
+</html>
