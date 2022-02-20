@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // set 数据去重
+
+
+        const sw = [1, 2, 3, 1, 2, 5]
+        const s1 = new Set()
+        const ss = new Set(sw)
+        console.log(ss)
+
+
+        console.log(s1.size)
+        const ary = [...ss]
+        console.log(ary)
+
+
+        //set 常用方法
+        let s4 = new Set()
+            //add 添加
+        s4.add(1).add('b') //支持链式调用
+
+        console.log(s4.size)
+            //delete 删除
+
+        let a = s4.delete(1) //返回布尔值成功为true
+        console.log(a)
+        console.log(s4.size)
+
+        // has 批判某个值是否属于set  返回布尔值
+        console.log(s4.has('c'))
+        console.log(s4.size)
+
+        // clear() 清空set
+        s4.clear()
+        console.log(s4.size)
+
+
+        //从set中取值
+
+        ss.forEach(
+            value => console.log(value)
+        )
+        ss.forEach(function(k) {
+            console.log(k)
+        })
+    </script>
+</body>
+
+</html>
