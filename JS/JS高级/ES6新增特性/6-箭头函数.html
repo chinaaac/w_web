@@ -29,6 +29,23 @@
 
         const fn3 = v => v
         console.log(fn3(5))
+
+
+        // 箭头函数不绑定this，箭头函数没有自己的this关键字
+        // 如果在箭头函数使用this，this将指性箭头函数定义的位置的this
+
+        function fnn() {
+            console.log(this)
+            return () => {
+                console.log(this) //这个this是定义处的this（上级）
+            }
+        }
+        const obj = {
+            name: 'cc'
+        }
+
+        let aa = fnn.call(obj)
+        aa()
     </script>
 </body>
 

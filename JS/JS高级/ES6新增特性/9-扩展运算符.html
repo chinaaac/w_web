@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+
+    <script>
+        // 合并数组 方法1
+        let a1 = [1, 3, 5]
+        let a2 = [2, 5, 6]
+        let a3 = [...a1, ...a2]
+        console.log(a3)
+
+        // 方法2
+
+        let a4 = []
+
+        a4.push(...a1)
+        console.log(a4)
+
+        // 利用扩展运算符将伪数组变为真数组
+
+        let oDivs = document.getElementsByTagName('div')
+
+        console.log(oDivs)
+
+        let ary = [...oDivs] //转换
+        console.log(ary)
+        ary.push(222)
+        ary.push(11)
+        console.log(ary)
+    </script>
+
+    <script>
+        var a = [{
+            "id": "f89dcb2f79ec4ea6b312c99a8ea9a167",
+            "name": "新闻频道",
+            "description": "NEWS_CHANNEL",
+            "columns": []
+        }, {
+            "id": "2912498cfcde458092709ce76b8d6ba9",
+            "name": "生活频道",
+            "description": "",
+            "columns": [{
+                "id": "dde8c7f2b9a245299c7899fb511dfe57",
+                "name": "喜汇金陵",
+                "parentId": "2912498cfcde458092709ce76b8d6ba9",
+                "namespace": "xhjl",
+                "description": ""
+            }, {
+                "id": "feb80d7e44094ec9960b30fe329c2b10",
+                "name": "社区联盟",
+                "parentId": "2912498cfcde458092709ce76b8d6ba9",
+                "namespace": "sqlm",
+                "description": ""
+            }, {
+                "id": "fdd46205c2e942e6897c2f7fca2971aa",
+                "name": "公安微警务",
+                "parentId": "2912498cfcde458092709ce76b8d6ba9",
+                "namespace": "gawjw",
+                "description": ""
+            }, {
+                "id": "04cbcc13cd2f4b689de7c79b8ff0bd83",
+                "name": "乡村发现",
+                "parentId": "2912498cfcde458092709ce76b8d6ba9",
+                "namespace": "xcfx",
+                "description": ""
+            }, {
+                "id": "64565731599e47d59db4ce3b26d46c4a",
+                "name": "标点家装",
+                "parentId": "2912498cfcde458092709ce76b8d6ba9",
+                "namespace": "bdjz",
+                "description": ""
+            }, {
+                "id": "7a902708fb454850b4dbef5f9d36f73a",
+                "name": "房产",
+                "parentId": "2912498cfcde458092709ce76b8d6ba9",
+                "namespace": "fc",
+                "description": ""
+            }, {
+                "id": "e16354c29fce45fdb881b065b4c0c155",
+                "name": "我是掼蛋王",
+                "parentId": "2912498cfcde458092709ce76b8d6ba9",
+                "namespace": "wsgdw",
+                "description": ""
+            }, {
+                "id": "b5b82aa2d9694636a6718db3b6a08a97",
+                "name": "第一家装",
+                "parentId": "2912498cfcde458092709ce76b8d6ba9",
+                "namespace": "dyjz",
+                "description": ""
+            }, {
+                "id": "215eded15def49619dffe19e86bd247f",
+                "name": "标点财商",
+                "parentId": "2912498cfcde458092709ce76b8d6ba9",
+                "namespace": "bdcs",
+                "description": ""
+            }, {
+                "id": "cc2764a32689449eb3aa1e57a3ca467e",
+                "name": "我的大学",
+                "parentId": "2912498cfcde458092709ce76b8d6ba9",
+                "namespace": "wddx",
+                "description": ""
+            }]
+        }, {
+            "id": "5c63b1cc24b040638602d80266f37191",
+            "name": "牛咔视频",
+            "description": "",
+            "columns": [{
+                "id": "ac98467f9dd444d98aad50fde5dd64d7",
+                "name": "牛咔视频",
+                "parentId": "5c63b1cc24b040638602d80266f37191",
+                "namespace": "nksp",
+                "description": ""
+            }]
+        }, {
+            "id": "8760564f7e2648b39288c6e3e035645f",
+            "name": "教科频道",
+            "description": "",
+            "columns": [{
+                "id": "e03a3631bc11476aabf5653965e63784",
+                "name": "有请当事人",
+                "parentId": "8760564f7e2648b39288c6e3e035645f",
+                "namespace": "yqdsr",
+                "description": ""
+            }, {
+                "id": "cb2346b0c04448c7b3a8dea4d76c0ec1",
+                "name": "金色年代",
+                "parentId": "8760564f7e2648b39288c6e3e035645f",
+                "namespace": "jsnd",
+                "description": ""
+            }, {
+                "id": "91104824c7514bfb82add5446410588b",
+                "name": "律师直播室",
+                "parentId": "8760564f7e2648b39288c6e3e035645f",
+                "namespace": "lszbs",
+                "description": ""
+            }, {
+                "id": "f74caf0493974102a21b56685ff7961f",
+                "name": "宏琪说交通",
+                "parentId": "8760564f7e2648b39288c6e3e035645f",
+                "namespace": "hqsjt",
+                "description": ""
+            }, {
+                "id": "131b597427a54edca8f8e3812dc716ac",
+                "name": "法制现场",
+                "parentId": "8760564f7e2648b39288c6e3e035645f",
+                "namespace": "fzxc",
+                "description": ""
+            }]
+        }, {
+            "id": "d635b4639ca74fb5a3bb3ef263d80572",
+            "name": "少儿频道",
+            "description": "",
+            "columns": [{
+                "id": "430163e4b34b4532ac339db84680eb9d",
+                "name": "少儿频道",
+                "parentId": "d635b4639ca74fb5a3bb3ef263d80572",
+                "namespace": "sepd",
+                "description": ""
+            }]
+        }, {
+            "id": "617e4a3e06ce4de4b3914bcc5f0b64a3",
+            "name": "交通体育部",
+            "description": "",
+            "columns": [{
+                "id": "3c898d2da346488ebe6cc62096d175fb",
+                "name": "南京体育头条",
+                "parentId": "617e4a3e06ce4de4b3914bcc5f0b64a3",
+                "namespace": "njtytt",
+                "description": ""
+            }, {
+                "id": "787938cf7ffb44ab9a33d3f5f6699724",
+                "name": "交通广播公众号",
+                "parentId": "617e4a3e06ce4de4b3914bcc5f0b64a3",
+                "namespace": "jtgbgzh",
+                "description": ""
+            }]
+        }, {
+            "id": "e3a72eb7ae9a4d9f91484a3bf80722b8",
+            "name": "娱乐频道",
+            "description": "",
+            "columns": [{
+                "id": "acc5be486ee841da948553a9b1b6b000",
+                "name": "大学生项目组",
+                "parentId": "e3a72eb7ae9a4d9f91484a3bf80722b8",
+                "namespace": "dxsxmz",
+                "description": ""
+            }, {
+                "id": "b6e96c152f38431e90289e2a780f96a9",
+                "name": "拓展营销",
+                "parentId": "e3a72eb7ae9a4d9f91484a3bf80722b8",
+                "namespace": "tzyx",
+                "description": ""
+            }, {
+                "id": "4ffc0964cac84cc49976a97b2c150b83",
+                "name": "智汇园区",
+                "parentId": "e3a72eb7ae9a4d9f91484a3bf80722b8",
+                "namespace": "zhyq",
+                "description": ""
+            }, {
+                "id": "82320205e57d4639aff848427a2723d8",
+                "name": "动漫大会",
+                "parentId": "e3a72eb7ae9a4d9f91484a3bf80722b8",
+                "namespace": "dmdh",
+                "description": ""
+            }]
+        }, {
+            "id": "fb85743c515c4027be9cf688aa3909b3",
+            "name": "十八频道",
+            "description": "",
+            "columns": [{
+                "id": "5dda2f774b294e51836dd6f38a4a4487",
+                "name": "听我韶韶",
+                "parentId": "fb85743c515c4027be9cf688aa3909b3",
+                "namespace": "twss",
+                "description": ""
+            }, {
+                "id": "20474b7ede344999a31cdcda10cf087c",
+                "name": "标点美食",
+                "parentId": "fb85743c515c4027be9cf688aa3909b3",
+                "namespace": "bdms",
+                "description": ""
+            }, {
+                "id": "4bc9dac80c7e482c886ae2dc535394fc",
+                "name": "标点健康",
+                "parentId": "fb85743c515c4027be9cf688aa3909b3",
+                "namespace": "bdjk",
+                "description": ""
+            }, {
+                "id": "c80b544e060c4908b26bea4fa6b39184",
+                "name": "健康大讲堂",
+                "parentId": "fb85743c515c4027be9cf688aa3909b3",
+                "namespace": "jkdjt",
+                "description": ""
+            }, {
+                "id": "6f41a079396349229e281e0215ef943b",
+                "name": "标点",
+                "parentId": "fb85743c515c4027be9cf688aa3909b3",
+                "namespace": "bd",
+                "description": ""
+            }, {
+                "id": "e4881c66f8d24a989bea86c5d978c1c6",
+                "name": "文旅相关栏目",
+                "parentId": "fb85743c515c4027be9cf688aa3909b3",
+                "namespace": "wlxglm",
+                "description": ""
+            }, {
+                "id": "82df198b27ce4fb7ab24753df1dfb96b",
+                "name": "消费向导",
+                "parentId": "fb85743c515c4027be9cf688aa3909b3",
+                "namespace": "xfxd",
+                "description": ""
+            }, {
+                "id": "3c58b6a8d53744b7a89dbc89d748624e",
+                "name": "新媒体",
+                "parentId": "fb85743c515c4027be9cf688aa3909b3",
+                "namespace": "xmt",
+                "description": ""
+            }, {
+                "id": "3851ea467fb84a2abfaa9b5ac2bb5c23",
+                "name": "社群",
+                "parentId": "fb85743c515c4027be9cf688aa3909b3",
+                "namespace": "sq",
+                "description": ""
+            }, {
+                "id": "7e1d636c03734de38d0c9aad404af535",
+                "name": "视觉工作室",
+                "parentId": "fb85743c515c4027be9cf688aa3909b3",
+                "namespace": "sjgzs",
+                "description": ""
+            }, {
+                "id": "1b88f94ff5294be787364345a2b7af82",
+                "name": "十八频道技术部",
+                "parentId": "fb85743c515c4027be9cf688aa3909b3",
+                "namespace": "18pdjsb",
+                "description": ""
+            }, {
+                "id": "e03d365ac9804a58b841f1cffd23dbbb",
+                "name": "乡村振兴",
+                "parentId": "fb85743c515c4027be9cf688aa3909b3",
+                "namespace": "xczx",
+                "description": ""
+            }]
+        }, {
+            "id": "b0bd0721d1c5459fb59c411a08af07eb",
+            "name": "索贝公司",
+            "description": "",
+            "columns": [{
+                "id": "6c31a87afaec4f1fb35c6ef14f3aa130",
+                "name": "索贝公司",
+                "parentId": "b0bd0721d1c5459fb59c411a08af07eb",
+                "namespace": "sobey",
+                "description": ""
+            }]
+        }, {
+            "id": "c8dc50e00eec466a9c63ad5003a78443",
+            "name": "康养事业部",
+            "description": "kysyb",
+            "columns": [{
+                "id": "612d6e55febc404785d9d39a89fab84f",
+                "name": "B+心选",
+                "parentId": "c8dc50e00eec466a9c63ad5003a78443",
+                "namespace": "bjxx",
+                "description": ""
+            }, {
+                "id": "464488c36068434d9518317353f0d6e0",
+                "name": "智慧康养",
+                "parentId": "c8dc50e00eec466a9c63ad5003a78443",
+                "namespace": "zhky",
+                "description": ""
+            }, {
+                "id": "0d4a15231d7e401299a4e850a95863d5",
+                "name": "跟着大脚走",
+                "parentId": "c8dc50e00eec466a9c63ad5003a78443",
+                "namespace": "gzdjz",
+                "description": ""
+            }]
+        }, {
+            "id": "6841784fe46a4290a1419b2844e18822",
+            "name": "广告部",
+            "description": "",
+            "columns": [{
+                "id": "c5b108d4fe834582a763687ff313890b",
+                "name": "广告部",
+                "parentId": "6841784fe46a4290a1419b2844e18822",
+                "namespace": "ggb",
+                "description": ""
+            }]
+        }]
+        var c = []
+        var d = []
+        a.forEach(function(k) {
+            d.push(k.name)
+        })
+
+        console.log(d)
+
+
+
+        function fn(a, name) {
+            a.forEach(function(k) {
+                // console.log(k.name)
+
+                if (d.indexOf(k.name) < 0) {
+
+                    c.push(k.name)
+                }
+
+                if (k.columns && k.columns.length > 0) {
+                    fn(k.columns, 'name')
+                }
+
+
+            });
+        }
+
+        fn(a, 'name')
+        console.log(c)
+    </script>
+
+
+</body>
+
+</html>

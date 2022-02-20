@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 伪数组转换为真数组
+
+        let jar = {
+            '0': 'cc',
+            '1': 'dd',
+            '2': 'ff',
+            length: 3
+        }
+
+        console.log(jar)
+        console.log(jar['length'])
+
+
+        let zar = Array.from(jar)
+        console.log(zar)
+
+        // 参数2 ，可以处理接收到的数据
+        let zar2 = Array.from(jar, item => item + '1')
+        console.log(zar2)
+
+        let zar3 = Array(jar, function(k) {
+            console.log(k)
+        })
+        console.log(zar3)
+    </script>
+</body>
+
+</html>

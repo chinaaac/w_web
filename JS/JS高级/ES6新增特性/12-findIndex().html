@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //查找元素，返回满足条件的数组的索引
+        // 查找到一个即返回,没找到返回-1
+        // 只查找一次
+
+        let ary = [1, 2, 4, 5, 7, 8]
+        let index = ary.findIndex((value) => {
+            return value > 2 //返回满足条件的第一个数据的索引号
+        })
+        console.log(index)
+    </script>
+
+</body>
+
+</html>
