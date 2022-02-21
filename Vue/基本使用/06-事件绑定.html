@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="add" v-on:click="add()" />
+        <!-- 不加括号也能调用 -->
+        <input type="button" value="sub" @click="sub" />
+        <input type="button" value="reset" @click="reset()">
+        <p v-text="num"></p>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                num: 0
+            },
+            methods: {
+                add: function() {
+                    // 这里的this是vue的实例对象即vm
+                    this.num++
+                },
+                sub: function() {
+                    this.num--
+                },
+                reset: function() {
+                    this.num = 0
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+
+    <style>
+        [v-cloak] {
+            display: none
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <div v-cloak>{{msg}}</div>
+        <div v-text="msg"></div>
+        <div v-html="msg1"></div>
+        <div v-pre>{{msg2}}</div>
+    </div>
+
+    <script>
+        // v-cloak 用法
+
+        /* 
+        v-cloak 用法
+        1. 提供样式
+            [v-cloak]{
+                display:none
+            }
+
+        2. 在插值表达式所在的标签中添加v-cloak
+
+
+        背后的原理，先荣国样式隐藏内容，让后在内存中进行值的替换，替换好后显示最终夺得结果
+            */
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello Vue',
+                msg1: '<h1>123</h1>',
+                msg2: '{msg1111}'
+            }
+        })
+    </script>
+
+</body>
+
+</html>
