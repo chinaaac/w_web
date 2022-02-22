@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>{{msg}}</div>
+
+        <!-- 如果事件直接绑定函数名称，那么默认传递事件对象作为函数的第一个参数 -->
+        <div>
+            <input type="button" value="点击1" @click="say2">
+
+            <!-- 如果事件绑定函数调用，事件对象必须作为最后一个参数显示传递，并且事件名称必须固定$event -->
+            <input type="button" value="点击2" @click="say(456,111,$event)">
+        </div>
+
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: '123'
+            },
+            methods: {
+                say(arg, a2, e) {
+                    console.log(arg, a2)
+                    console.log(e.target.tagName)
+                    console.log(e)
+                },
+
+                say2(event) {
+                    console.log(event.target)
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>

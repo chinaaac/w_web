@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-on:keyup.aaa="handle" v-model="info">
+    </div>
+
+    </div>
+    <script>
+        /*
+                                                                                                                                                                                                                                                                                                        自定义修饰符
+                                                                                                                                                                                                                                                                                                        config.keyCodes对象
+                                                                                                                                                                                                                                                                                                Vue.config.keyCodes.f1=112         
+                                                                                                                                                                                                                                                                                                        */
+
+        //    自定义按键
+        // v-on:keyup.65="handle"
+
+        Vue.config.keyCodes.aaa = 65
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                info: ''
+
+            },
+            methods: {
+                handle(e) {
+                    console.log(e.keyCode)
+                }
+
+            }
+        })
+    </script>
+
+</body>
+
+</html>
+
+</html>

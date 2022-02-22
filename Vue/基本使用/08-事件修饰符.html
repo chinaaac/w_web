@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>{{msg}}</div>
+        <div @click="c1">
+            <button @click.stop="c2">hello</button>
+        </div>
+        <div>
+            <a href="http://jd.com" @click.prevent="c3">jd</a>
+        </div>
+    </div>
+
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 1
+            },
+            methods: {
+                c1() {
+                    this.msg++
+                },
+                c2(e) {
+                    // 阻止冒泡
+                    // e.stopPropagation()  用vue 修饰符阻止冒泡 @click.stop="c2"
+                    this.msg++
+                },
+                c3(e) {
+                    // 阻止默认行为
+
+                    // e.preventDefault();  @click.prevent="c3"
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>
+
+</html>

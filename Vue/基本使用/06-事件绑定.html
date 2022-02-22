@@ -14,7 +14,9 @@
         <input type="button" value="add" v-on:click="add()" />
         <!-- 不加括号也能调用 -->
         <input type="button" value="sub" @click="sub" />
-        <input type="button" value="reset" @click="reset()">
+
+        <!-- 需要传参，必须加括号 -->
+        <input type="button" value="reset()" @click="reset()">
         <p v-text="num"></p>
     </div>
 

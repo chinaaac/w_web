@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <form action="">
+            user：
+            <input type="text" v-model="uname" v-on:keyup.delete="clear"> pwd:
+            <input type="passwrod" v-model="pwd" v-on:keyup.enter=""> <input type="submit" value="提交" @click.prevent="handlesubmit">
+        </form>
+    </div>
+
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                uname: '',
+                pwd: ''
+
+            },
+            methods: {
+                handlesubmit() {
+                    console.log(this.uname, this.pwd)
+                },
+                clear() {
+                    this.uname = ''
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>
+
+</html>

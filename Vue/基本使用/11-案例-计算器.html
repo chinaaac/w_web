@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../vue.js">
+    </script>
+</head>
+
+<body>
+
+    <div id="app">
+        <h1>{{msg}}</h1>
+        数值A: <input type="text" v-model="n1" v-on:keyup.enter="f1">
+        <br>数值B: <input type="text" v-model="n2" v-on:keyup.enter="f1"> <br><input type="button" value="计算" @click="f1">
+        <p>计算结果：{{res}}</p>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                n1: '',
+                n2: '',
+                res: '',
+                msg: '简单计算器'
+
+            },
+            methods: {
+                f1() {
+                    this.res = parseInt(this.n1) + parseInt(this.n2)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
