@@ -10,23 +10,15 @@
 </head>
 
 <body>
-    <div id="app">
-        <input type="text" v-bind:value="msg" v-on:input="msg=$event.target.value">
-        <p>{{msg}}</p>
-        <input type="text" v-model="msg">
-    </div>
+    <div id="app"></div>
     <script>
         var vm = new Vue({
             el: '#app',
             data: {
-                msg: 'hello'
-            },
 
+            },
             methods: {
-                // 没有用到这个
-                inp(e) {
-                    this.msg = e.target.value
-                }
+
             }
         })
     </script>
