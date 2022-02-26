@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>{{msg}}</div>
+        <ul>
+            <!-- 基本用法 -->
+            <li v-for="item in fruites">{{item}}</li>
+        </ul>
+        <ul>
+            <!-- 加上索引用法 -->
+            <li v-for="(item,index) in fruites">{{index+1+'---'+item}}</li>
+        </ul>
+        <ul>
+            <!-- 复杂对象循环用法 -->
+            <!-- 加key属性，可以帮助vue快速查找提升效率 -->
+            <li :key="item.id" v-for="(item,index) in myf">
+                <span>{{item.cname}}</span>
+                <span>-----------</span>
+                <span>{{item.ename}}</span>
+
+            </li>
+        </ul>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                fruites: ['apple', 'orange', 'banana'],
+                msg: '水果列表',
+                myf: [{
+                    id: 1,
+                    ename: 'apple',
+                    cname: '苹果'
+                }, {
+                    id: 2,
+                    ename: 'orange',
+                    cname: '橘子'
+                }, {
+                    id: 3,
+                    ename: 'banana',
+                    cname: '香蕉'
+                }]
+            },
+            methods: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

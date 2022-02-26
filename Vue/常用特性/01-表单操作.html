@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <form action="http://jd.com">
+            <div>
+                <span>姓名</span>
+                <span>
+                    <input type="text" v-model="xm">
+                </span>
+            </div>
+            <div>
+                <span>性别</span> <span>
+                    <input type="radio" name="xb" id="male" value="1" v-model="gender"> 
+                    <label for="male">男</label>
+                    <input type="radio" name="xb" id="female" value="2" v-model="gender"> 
+                    <label for="female">女</label>
+                </span>
+            </div>
+            <div>
+                <span>
+                    爱好
+                </span>
+                <input type="checkbox" name="" id="ball" value="1" v-model="hob">
+                <label for="ball">篮球</label>
+                <input type="checkbox" name="" id="sing" value="2" v-model="hob">
+                <label for="sing">唱歌</label>
+                <input type="checkbox" name="" id="code" value="3" v-model="hob">
+                <label for="code">写代码</label>
+            </div>
+            <div>
+                <span>职业</span>
+                <!-- 添加  multiple 属性可多选-->
+                <select v-model="job" multiple>
+                    <option value="0">选择职业</option>
+                    <option value="1">教师</option>
+                    <option value="2" >软件工程师</option>
+                    <option value="3" >律师</option>
+                </select>
+            </div>
+            <div>
+                <span>
+                    个人介绍
+                </span>
+                <textarea name="" id="" cols="30" rows="10" v-model="my"></textarea>
+            </div>
+            <div>
+                <input type="submit" value="提交" @click.prevent="submit">
+            </div>
+        </form>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                xm: '',
+                gender: 1,
+                hob: [2, 3],
+
+                job: [2, 3],
+                my: '12'
+            },
+            methods: {
+                submit() {
+                    console.log(this.xm)
+                    console.log(this.gender)
+                    console.log(this.hob)
+                    console.log(this.job)
+                    console.log(this.my)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

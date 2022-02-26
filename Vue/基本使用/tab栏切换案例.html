@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+    <style>
+        h1 {
+            display: inline-block;
+        }
+        
+        div img {
+            display: none;
+        }
+        
+        .cc {
+            display: block;
+        }
+        
+        .ac {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li :class="cruindex==i?'ac':''" v-for="(v,i) in list" :key="v.id" :style="style" @click="bg(i)">{{v.title}}</li>
+        </ul>
+
+        <div>
+            <img :class="cruindex==i?'cc':''" v-for='(v,i) in list' :key="v.id" :src="v.path" :style="imgstyle">
+        </div>
+
+
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                cruindex: 0, //当前选项卡索引
+                imgstyle: {
+                    width: '100px',
+                    height: '100px'
+                },
+                style: {
+                    padding: '10px',
+                    border: '1px solid blue',
+                    display: 'inline-block',
+                    backgroundColor: ''
+                },
+
+                list: [{
+                    title: 'apple',
+                    path: './test.jpg',
+                    id: 1
+                }, {
+                    title: 'orange',
+                    path: './test.jpg',
+                    id: 2
+                }, {
+                    title: 'iemon',
+                    path: './test.jpg',
+                    id: 3
+                }]
+            },
+            methods: {
+                bg(e) {
+                    //   在这里实现选项卡切换，本质操作类名
+                    // 如何操作类目，通过cruinde参数
+                    console.log(e)
+                    this.cruindex = e
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

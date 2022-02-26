@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 循环和分支一起使用 -->
+        <div v-for="(value,key,index) in obj" v-if="value==20">
+            {{value+'---'+key+'---'+index}}
+        </div>
+    </div>
+    <script>
+        // 使用原生js遍历对象
+        obj = {
+                uname: 'cc',
+                age: 20,
+                gender: 'male'
+            }
+            //对象循环
+        for (var key in obj) {
+            console.log(key)
+            console.log(obj[key])
+        }
+
+        ////////////////
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                obj: {
+                    uname: 'cc',
+                    age: 20,
+                    gender: 'male'
+                }
+            },
+            methods: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>
