@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <span>名</span> <input type="text" v-model="fn">
+        </div>
+        <div>
+            <span>姓</span> <input type="text" v-model="ln">
+        </div>
+        <div>
+            {{full}}
+        </div>
+    </div>
+    <script>
+        // 应用场景：数据变化时执行异步或者开销较大的操作
+        var vm = new Vue({
+            el: '#app ',
+            data: {
+                fn: 'jim',
+                ln: 'Green',
+                full: 'jim Green'
+            },
+            methods: {
+
+            },
+            computed: {
+                // full() {
+                //     return this.fn + this.ln
+                // }
+            },
+            watch: {
+                // 监控值要和data里面的数据一样，参数为变化后的最新值
+                fn(val) {
+                    this.full = this.fn + `  ` +
+                        this.ln
+                },
+                ln(val) {
+                    this.full = this.fn + `  ` +
+                        this.ln
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -10,21 +10,28 @@
 </head>
 
 <body>
-    <div id="app"></div>
+    <div id="app">
+        <div>
+            {{msg}}
+        </div>
+        <div>
+            {{reverseMessage}}
+        </div>
+    </div>
     <script>
         var vm = new Vue({
             el: '#app',
             data: {
-
+                msg: 'helloo'
             },
             methods: {
 
             },
+            // 调用计算属性它不需要加括号，调用时直接使用函数名
             computed: {
-
-            },
-            watch: {
-
+                reverseMessage() {
+                    return this.msg.split('').reverse().join('')
+                }
             }
         })
     </script>

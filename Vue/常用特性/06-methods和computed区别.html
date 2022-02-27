@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <div>
+            {{msg}}
+        </div> -->
+        <div>
+            {{reverseMessage}}
+
+        </div>
+        <div>
+            {{reverseMessage}}
+
+        </div>
+        <div>
+            {{reverses()}}
+
+        </div>
+        <div>
+            {{reverses()}}
+
+        </div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'helloo',
+                num: 100
+            },
+            methods: {
+                // 每次都重新计算，不存在缓存
+                reverses() {
+                    console.log('methods')
+                    return this.msg.split('').reverse().join('')
+                }
+            },
+            // 调用计算属性（compputed）不需要加括号，调用时直接使用函数名
+            computed: {
+                // 存在缓存，可以节省性能，数据不变不会重复计算
+                // 耗时大使用这个
+                reverseMessage() {
+                    // console.log('computed')
+                    // return this.msg.split('').reverse().join('')
+                    var t = 0
+                    for (var i = 0; i <= this.num; i++) {
+                        t += i
+                    }
+                    return t;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

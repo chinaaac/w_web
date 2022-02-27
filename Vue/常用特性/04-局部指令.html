@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-color="msg">
+        <div v-fontsize>23</div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: {
+                    color: 'green'
+                }
+            },
+            methods: {
+
+            },
+
+
+            //   这是局部指令
+            // 局部指令只能在本指令中使用，其他组件无法使用
+            directives: {
+                color(el, binding) {
+                    el.style.backgroundColor = binding.value.color
+                },
+                fontsize(el) {
+                    el.style.fontSize = '100px'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

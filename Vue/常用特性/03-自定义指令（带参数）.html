@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <!-- 自定义指令，默认聚焦第一个input -->
+    <div id="app">
+        <!-- 根据指令的参数更换背景色 -->
+        <input type="text" v-color="msg">
+        <input type="text" v-focus>
+    </div>
+    <script>
+        Vue.directive('focus', {
+            inserted(el) { //el:元素的简写，表示指令所绑定的元素
+                el.focus();
+            }
+        })
+        Vue.directive('color', {
+            bind(el, binding) {
+                console.log(binding)
+                el.style.backgroundColor = binding.value.color;
+            }
+        })
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: {
+                    color: 'red'
+                }
+            },
+            methods: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

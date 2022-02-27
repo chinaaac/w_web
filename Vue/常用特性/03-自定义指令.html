@@ -10,20 +10,23 @@
 </head>
 
 <body>
-    <div id="app"></div>
+    <!-- 自定义指令，默认聚焦第一个input -->
+    <div id="app">
+        <input type="text">
+        <input type="text" v-focus>
+    </div>
     <script>
+        Vue.directive('focus', {
+            inserted(el) { //el:元素的简写，表示指令所绑定的元素
+                el.focus();
+            }
+        })
         var vm = new Vue({
             el: '#app',
             data: {
 
             },
             methods: {
-
-            },
-            computed: {
-
-            },
-            watch: {
 
             }
         })
