@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="msg">
+        <!-- 把第一个数据作为参数给过滤器 -->
+        <div>{{msg|filter_name}}</div>
+        <!-- 把前一个参数作为数据传递给下个函数 -->
+        <div>{{msg|filter_name|pinjie_cl}}</div>
+        <div :abc="msg|filter_name">测试数据</div>
+        <div v-if="xs">{{msg|add1}}</div>
+        <div>{{msg|te}}</div>
+    </div>
+    <script>
+        // 作用格式化数据，处理数据
+        // 定义过滤器
+        Vue.filter('filter_name', function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1)
+        })
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: '',
+                xs: 1
+            },
+            methods: {
+
+            },
+            computed: {
+
+            },
+            watch: {
+
+            },
+            // 局部过滤器
+            filters: {
+                te() {
+                    console.log(this)
+
+                },
+                add1(v) {
+
+
+                    return parseInt(v) + 1
+                }
+            }
+        })
+        Vue.filter('pinjie_cl', function(v) {
+            return v + vm.msg
+        })
+    </script>
+</body>
+
+</html>

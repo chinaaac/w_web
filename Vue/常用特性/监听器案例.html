@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <span>用户名</span>
+        <input type="text" v-model.lazy="ipt"> <span v-if="ys" :style="style">{{tip}}</span>
+        <div v-cloak>
+            {{ipt}}
+        </div>
+    </div>
+    <script>
+        // 验证用户名是否可用
+        // 1. 监听用户名变化
+        // 2. 调用后台接口验证
+        // 3. 根据验证结果调整提示信息
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                un: ['cc', 'cl', 'dd'],
+                ipt: '',
+                ys: true,
+                style: {
+                    backgroundColor: 'red',
+                    display: 'inline-block'
+                },
+                tip: ''
+
+            },
+            methods: {
+                checkun(un) {
+                    _this = this
+                        // 调用接口，但是可以使用定时任务的方式模拟接口调用
+                    setTimeout(() => {
+                        // 模拟接口调用
+                        if (un == 'admin') {
+
+                            this.style.backgroundColor = 'red'
+                            _this.tip = '用户名已存在，请更换'
+                        } else {
+
+                            this.style.backgroundColor = 'green'
+                            _this.tip = '用户名正确'
+                        }
+                    }, 2000);
+                }
+            },
+            computed: {
+
+            },
+            watch: {
+                ipt(nval) {
+                    // 调用接口验证用户名合法性，封装到methods里
+                    this.checkun(nval)
+                    this.style.backgroundColor = ''
+                    this.tip = '正在验证'
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
