@@ -12,11 +12,13 @@
 <body>
     <div id="app">
         <div>{{date}}</div>
+        <!-- 接收参数从第二个开始接收 -->
         <div>{{date|formatdate('yyyy-MM-dd','hello')}}</div>
 
     </div>
     <script>
         // 过滤器格式化日期
+        // 接收上面传过来的参数
         Vue.filter('formatdate', function(v, arg1, arg2) {
             if (arg1 == 'yyyy-MM-dd') {
                 var ret = ''

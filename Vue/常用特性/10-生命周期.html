@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>{{msg}}</div>
+        <button @click="handle">更新</button>
+        <button @click="destroy">销毁</button>
+    </div>
+    <script>
+        // vue生命周期7个阶段
+        /* 
+
+         挂载(初始化相关属性)
+            1.beforCreate
+            2.create
+            3.beforeMount
+            4.mounted
+        更新（元素或组件的变更操作）
+            1.beforUpdate
+            2.updated
+        销毁（销毁相关属性）
+            1.beforDestroy
+            2.destroyed
+
+        */
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: '生命周期'
+            },
+            methods: {
+                handle() {
+                    this.msg = 1
+                },
+                destroy() {
+                    // 销毁操作
+                    this.$destroy();
+                }
+            },
+            computed: {
+
+            },
+            watch: {
+
+            },
+            beforCreate() {
+                console.log('beforCreate')
+            },
+            created() {
+                console.log('creatd')
+            },
+            beforMount() {
+                console.log('beformount')
+            },
+            mounted() {
+                console.log('mounted')
+            },
+            beforUpdate() {
+                console.log('beforUpdata')
+            },
+            updated() {
+                console.log('updated')
+            },
+            beforDestroy() {
+                console.log('befordestroy')
+            },
+            destroyed() {
+                console.log('destroyed')
+            }
+        })
+    </script>
+</body>
+
+</html>

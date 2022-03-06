@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 每个组件数据独立不受，不受其他数据影响 -->
+        <button-count></button-count>
+        <button-count></button-count>
+        <button-count></button-count>
+        <!-- 使用驼峰命名，在使用组件时只能在字符串模板中使用驼峰命名
+        在普通的标签模板中必须使用短横线方式使用组件 -->
+        <My-Comp></My-Comp>
+
+
+
+
+
+    </div>
+    <script>
+        // 每个组件数据独立不受，不受其他数据影响
+        /*
+                                组件注册
+            Vue.component(组件名称,{
+                data:组件数据,
+                template:组件模板内容
+            })                     
+                                            */
+
+        /*   Vue.component('button-count', {
+              // data必是一个函数
+              data: function () {
+                  return {
+                      count: 0
+                  }
+              },
+              // 组件模板内容必须是单个根元素,不允许有兄弟元素出现，必须有一个根标签包裹
+              // 支持模板字符串
+              template: `<div><button @click="handle">点击了{{count}}次</button><button>123</button></div>`,
+              methods: {
+                  handle() {
+                      this.count += 2
+                  }
+              }
+          }) */
+
+        // //////////////////////////////////
+        // 推荐使用这个命名方法
+        Vue.component('button-count', {
+            // data必是一个函数
+            data: function () {
+                return {
+                    count: 0
+                }
+            },
+            // 组件模板内容必须是单个根元素,不允许有兄弟元素出现，必须有一个根标签包裹
+            // 支持模板字符串
+            template: `
+             <div>
+                <button @click="handle">点击了{{count}}次</button>
+                <button>123</button>
+                <MyComp></MyComp>
+            </div>
+            `,
+            methods: {
+                handle() {
+                    this.count += 2
+                }
+            }
+        })
+        // 驼峰命名
+        //  使用驼峰命名，在使用组件时只能在字符串模板中使用驼峰命名
+        在普通的标签模板中必须使用短横线方式使用组件
+        Vue.component('MyComp', {
+            data: function () {
+                return {
+                    cc: 1,
+                    dd: 0
+                }
+            }
+            , template: `
+                <div>{{cc-dd}}</div>
+            `
+        }
+        )
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            methods: {
+
+            },
+            computed: {
+
+            },
+            watch: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

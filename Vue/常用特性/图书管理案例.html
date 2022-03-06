@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+    <style>
+        .orange {
+            background-color: orange;
+            margin: 0 auto;
+            padding: 0;
+            width: 500px;
+            text-align: center;
+        }
+        
+        .jz {
+            margin: 0 auto;
+            padding: 0;
+            text-align: center;
+        }
+        
+        .table {
+            margin: 0 auto;
+            padding: 0;
+            text-align: center;
+            width: 500px;
+            background-color: skyblue;
+        }
+        
+        td {
+            border: 1px yellow solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1 class="jz">{{title}}</h1>
+        <br>
+        <div :class="table">
+            <span>编号</span> <input type="text" v-model="id" :disabled="jz" v-focus>
+            <span>名称</span> <input type="text" v-model="name">
+            <button @click="add" :disabled="tj">提交</button>
+        </div>
+        <div>
+            <table :class="table">
+                <thead>
+                    <tr>
+                        <th v-for="item in thead">{{item}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="v in sj" :key="v.id">
+                        <td>{{v.id}} </td>
+                        <td>{{v.name}} </td>
+                        <td>{{v.time|ft}} </td>
+                        <td>
+                            <a href="" @click.prevent="xg(v.id)">修改</a>
+                            <span>|</span>
+                            <a href="" @click.prevent="sc(v.id)">删除</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="text-align: center;">
+                <span>图书总数:</span>{{count}}
+            </div>
+        </div>
+
+        <div>
+
+            <span><input type="text" v-model="fr"></span>
+            <button @click="click">add</button>
+            <button @click="del">del</button>
+            <button @click="th">替换</button>
+            <ul>
+                <li v-for="k in list">{{k}}</li>
+            </ul>
+
+            <div>
+                <div>{{info.name}}</div>
+                <div>{{info.age}}</div>
+                <div>{{info.gender}}</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        Vue.directive('focus', {
+            inserted(el) { //el:元素的简写，表示指令所绑定的元素
+                el.focus();
+            }
+        })
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                fr: '',
+                list: ['1', '2', '3'],
+                info: {
+                    name: 'lise',
+                    age: 18
+                },
+                // count: 0,
+                title: '图书管理',
+                id: '',
+                name: '',
+                jz: false,
+                tj: false,
+                orange: {
+                    orange: 1
+                },
+                table: {
+                    table: 1
+                },
+                sj: [],
+                thead: ['编号', '名称', '时间', '操作']
+            },
+            methods: {
+                add() {
+                    // 重用方法
+                    if (this.jz) {
+                        // 编辑操作
+                        // 根据当前的id去更新数组中对应的数据
+                        this.sj.some(k => {
+                            if (k.id == this.id) {
+                                k.name = this.name
+                                    // 完成更新操作后，终止循环
+                                return true
+                            }
+                        })
+                        this.jz = false
+                    } else {
+                        // 添加操作
+                        book = {}
+                        book.id = this.id
+                        book.name = this.name
+                        book.time = new Date()
+
+                        // this.$set(this.sj, this.sj.length, {
+                        //     id: this.id,
+                        //     name: this.name,
+                        //     time: new Date()
+                        // })
+                        this.sj.push(book)
+
+                        this.jz = false
+                    }
+                    this.id = ''
+                    this.name = ''
+                        // 
+
+                },
+                click() {
+                    this.list.push(this.fr)
+
+                },
+                del() {
+                    this.list.pop()
+                },
+                th() {
+                    this.list = this.list.slice(0, 2);
+                },
+                xg(id) {
+                    // 根据id查询出要编辑的数据
+                    // 对象的方法查询匹配的数据
+                    var sj = this.sj.filter(function(v) {
+                        return v.id == id
+                    })
+                    this.id = sj[0].id
+                        // 禁止修改id
+                    this.jz = true
+                    this.name = sj[0].name
+                },
+                sc(id) {
+                    // 删除图书
+
+                    // 根据id查找索引
+                    // 方法1
+                    if (0) {
+                        let index = this.sj.findIndex(function(v) {
+                            return v.id == id
+                        })
+
+                        console.log(index)
+
+                        this.sj.splice(index, 1);
+                    }
+                    // 方法2 匹配不符合条件的数据放到新数组里
+
+                    if (1) {
+                        this.sj = this.sj.filter(function(v) {
+                            return v.id != id
+                        })
+                    }
+
+                }
+            },
+            computed: {
+                // 计算图书总数
+                count() {
+                    return this.sj.length
+                }
+            },
+            watch: {
+                name(val) {
+                    // 验证id是否已存在
+                    var flag = this.sj.some(function(item) {
+                        return val == item.name
+                    })
+                    if (flag) {
+                        this.tj = true
+                    } else {
+                        this.tj = false;
+                    }
+                }
+            },
+            filters: {
+                ft(v) {
+                    return v.getFullYear() + `-` + (v.getMonth() + 1) + `-` + v.getDate()
+                }
+            },
+            mounted() {
+                // 该生命周期钩子函数，被触发的时候，模板已经可以使用了
+                // 一般此时用于获取后台数据，然后把数据填充到模板
+
+                var data = [{
+                    id: 1,
+                    name: '三国演义',
+                    time: new Date(),
+                    cz: `<h1>1</h1>`
+                }, {
+                    id: 2,
+                    name: '水浒传',
+                    time: new Date(),
+                }, {
+                    id: 3,
+                    name: '红楼梦',
+                    time: new Date(),
+                }, {
+                    id: 4,
+                    name: '西游记',
+                    time: new Date(),
+                }];
+                this.sj = data
+            }
+
+        })
+
+
+        // 这是全局作用域的过滤器
+        // Vue.filter('ftt', function(v) {
+        //     return v.getFullYear() + `-` + (v.getMonth() + 1) + `-` + v.getDate()
+        // })
+
+        vm.list[1] = 'ddd' //网页数据没有被渲染，但数组值已经被改掉了
+
+        //响应式渲染数据 1
+        Vue.set(vm.list, 2, 'cc')
+
+        //响应式渲染数据    2
+        vm.$set(vm.list, 1, 'ff')
+        vm.info.gender = 'nan'
+
+        vm.info.gender = 222 // 修改内容没有被渲染到页面
+
+        //
+
+        vm.$set(vm.info, 'gender', 'hhh')
+    </script>
+</body>
+
+</html>
