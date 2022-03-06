@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <component-a></component-a>
+        <test></test>
+        <hellotom></hellotom>
+        <test1></test1>
+    </div>
+    <script>
+        // 全局组件无法调用局部组件，只能在他的父组件中使用，在其他地方无法使用
+        Vue.component('test1', {
+            template: `<div>test<test></test>1test</div>`
+        })
+        /* 
+        局部组件
+        在示例下
+        component:{
+            '组件名':对象模板
+        }
+        */
+        var hello = {
+            data: function () {
+                return {
+                    msg: 'hahahha'
+                }
+            },
+            template: `
+            <div>
+                {{msg}}
+            </div>
+           `
+        }
+        var hellotom = {
+            data: function () {
+                return {
+                    msg: 'hahahhatom'
+                }
+            },
+            template: `
+            <div>
+                {{msg}}
+            </div>
+           `
+        }
+        var hello3 = {
+            data: function () {
+                return {
+                    msg: 'hahahha3'
+                }
+            },
+            template: `
+            <div>
+                {{msg}}
+            </div>
+           `
+        }
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            methods: {
+
+            },
+            computed: {
+
+            },
+            watch: {
+
+            },
+            components: {
+                'component-a': hello,
+                'hellotom': hellotom,
+                'test': hello3
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>
