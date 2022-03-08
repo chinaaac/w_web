@@ -17,6 +17,7 @@
         <test1></test1>
     </div>
     <script>
+        Vue.config.devtools=true
         // 全局组件无法调用局部组件，只能在他的父组件中使用，在其他地方无法使用
         Vue.component('test1', {
             template: `<div>test<test></test>1test</div>`

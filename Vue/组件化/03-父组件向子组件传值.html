@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <my-temp title="123"></my-temp>
+        <my-temp :title="title"></my-temp> -->
+        <div>{{pmsg}}</div>
+        <div>{{pmsg}}</div>
+        <my-temp></my-temp>
+        <my-temp :menu-title="ptitle" content="hello"></my-temp>
+    </div>
+    <script>
+        Vue.config.devtools=true
+        // 组件内通过props接收传递过来的值
+        Vue.component('my-temp',{
+            data:function(){
+              return {
+                  msg:'子组件本身的数据'
+              }  
+            },
+            props:['menuTitle','content'],
+            template:`<div>{{msg+menuTitle+content}}</div>`
+        })
+
+        
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                pmsg:'父组件内容',
+                ptitle:'动态绑定属性'
+            },
+            methods: {
+
+            },
+            computed: {
+
+            },
+            watch: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

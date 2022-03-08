@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div :style="{fontSize:fontSize+'px'}">{{pmsg}}</div>
+        <menu-item :parr="parr" @enlarge-text="handle"></menu-item>
+    </div>
+    <script>
+        Vue.config.devtools = true
+
+        /* 
+
+        子组件向父组件传值-基本用法
+        props传递数据原则，单向数据流
+         */
+
+        //  不建议使用
+        Vue.component('menu-item', {
+            props: ['parr'],
+            template: `
+            <div>
+                <ul>
+                    <li v-for='(item,index) in parr' :key=index>{{item}}</li>
+                </ul>
+                <button @click='parr.push("lemon")'>点击</button>
+                <button @click='$emit("enlarge-text")'>扩大父组件中的字体大小</button>
+            </div>
+            `
+        })
+
+        // 建议使用
+
+        // 子组件通过自定义事件向父组件传递信息，父组件监听子组件事件
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                pmsg: '父组件内容',
+                parr: ['apple', 'orange', 'banana'],
+                fontSize: 10
+            },
+            methods: {
+                handle() {
+                    // 扩大字体大小
+                    this.fontSize += 5
+                }
+            },
+            computed: {
+
+            },
+            watch: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        {{pmsg}}
+        <!-- pnum默认类型为string，:pnum默认属性为数字,绑定会进行运算 -->
+        <menu-item :pstr="pstr" :pnum="12" :pboo=true :parr="parr" :pobj="pobj"></menu-item>
+    </div>
+    <script>
+        Vue.config.devtools = true
+        Vue.component('menu-item', {
+            props: ['pstr', 'pnum', 'pboo', 'parr', 'pobj'],
+            template: `
+            <div>{{pstr}}{{typeof pnum}}{{typeof pboo}}
+               
+                <ul>
+                    <li v-for='(item,index) in parr' :key=index>{{item}}</li>
+                </ul>
+
+                <ol>
+                        <li v-for='(v,k) in pobj' :key=k>{{k}}:{{v}}</li>
+                </ol>
+            </div>
+           `
+        })
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                pmsg: '父组件中内容',
+                pstr: 'hello',
+                parr: ['apple', 'orange', 'banana']
+                , pobj: {
+                    name: 'cc',
+                    age: 12
+                }
+            },
+            methods: {
+
+            },
+            computed: {
+
+            },
+            watch: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        {{pmsg}}
+        <menu-item title="pmsg"></menu-item>
+        <!-- 动态数据传值 -->
+
+        <menu-item :ptitle="pmsg" content="123"></menu-item>
+    </div>
+    <script>
+        Vue.config.devtools=true
+        Vue.component('menu-item',{
+            data:function(){
+                return {
+                    msg:'子组件的内容'
+                }
+            },
+            props:['ptitle','content'],
+            template:`<div>{{msg+ptitle+content}}</div>`
+        })
+        var vm = new Vue({
+            el: '#app',
+            data: {
+               pmsg:'父组件内容',
+               ptitle:'动态绑定属性'
+            },
+            methods: {
+
+            },
+            computed: {
+
+            },
+            watch: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

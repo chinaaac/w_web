@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        {{pmsg}}
+        <menu-item title="pmsg"></menu-item>
+        <!-- 动态数据传值 -->
+        <!-- 普通标签中传递属性需要用横杆 -->
+        <menu-item :menu-title="ptitle" content="123"></menu-item>
+    </div>
+    <script>
+
+        // 在props中使用驼峰形式，模板中需要使用短横线的形式
+        // 字符串形式的模板中没有这个限制
+        Vue.config.devtools = true
+        Vue.component('third-com', {
+
+            props: ['testTitle'],
+            template: `<div>{{testTitle}}</div>`
+        })
+        Vue.component('menu-item', {
+
+            props: ['menuTitle'],
+            template: `<div>{{menuTitle}}<third-com testTitle='hello'></third-com></div>`
+        })
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                pmsg: '父组件内容',
+                ptitle: '动态绑定属性'
+            },
+            methods: {
+
+            },
+            computed: {
+
+            },
+            watch: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>
