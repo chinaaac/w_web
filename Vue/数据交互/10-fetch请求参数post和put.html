@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script>
+        kk = 1
+        gg = 0
+        Vue.config.devtools = true
+
+
+        // post
+        if (kk) {
+            // restful url传参
+            fetch('http://localhost:5000/books', {
+                // 默认get
+                // post需要三个参数，method，body，headers
+                method: 'post',
+                // 这里的数据也可以是json格式的，,hearder要改成josn看下面的案例
+                body: 'name=lisa&pwd=123',
+                // 必须设请求头，否无body的数据无法传递过去
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            }).then(function(data) {
+
+                // 用于获取后台返回的数据，需要return让下一个then处理
+                return data.text()
+            }).then(function(data) {
+                console.log(data)
+            })
+        }
+        if (kk) {
+            // restful url传参
+            fetch('http://localhost:5000/books', {
+                // 默认get
+                // post需要三个参数，method，body，headers
+                method: 'post',
+                // 这里的数据也可以是json格式的，看下面的案例
+                body: JSON.stringify({
+                    name: 'cc',
+                    pwd: '456'
+                }),
+                // 必须设请求头，否无body的数据无法传递过去
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(function(data) {
+
+                // 用于获取后台返回的数据，需要return让下一个then处理
+                return data.text()
+            }).then(function(data) {
+                console.log(data)
+            })
+        }
+
+        if (kk) {
+            // restful url传参
+            fetch('http://localhost:5000/books/123', {
+                // 默认get
+
+                method: 'put',
+                // 这里的数据也可以是json格式的，看下面的案例
+                body: JSON.stringify({
+                    name: 'cl',
+                    pwd: '789'
+                }),
+                // 必须设请求头，否无body的数据无法传递过去
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(function(data) {
+
+                // 用于获取后台返回的数据，需要return让下一个then处理
+                return data.text()
+            }).then(function(data) {
+                console.log(data)
+            })
+        }
+    </script>
+</body>
+
+</html>

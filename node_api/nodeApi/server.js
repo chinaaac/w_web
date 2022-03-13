@@ -1,13 +1,21 @@
 const express = require("express")
 const dotenv = require("dotenv")
-
+const bodyParser=require('body-parser')
 dotenv.config({
   path:'./config/config.env',
 });
 
-const app = express();
 
+
+
+const app = express();
+//处理静态资源
+app.use(express.static('public'))
+//处理参数
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended:false}))
 const PORT = process.env.PORT || 3000;
+
 
 app.listen(PORT,console.log(`Server rnning in ${process.env.NODE_ENV} mode on port ${PORT}`))
 
@@ -68,6 +76,30 @@ app.get("/delay3",(req,res)=>{
 
 
 
+app.get("/json",(req,res)=>{
+  res.json({
+	  name:'lisa',
+	  age:14,
+	  gender:'nan'
+  })
+})
+
+app.get("/books",(req,res)=>{
+  // res.send("<h1>Hello World</h1>") 发送HTML
+  // res.send({mag:"Hello World"}) 发送json格式数据
+  // res.json({success:true}) 发送json格式数据
+  // res.sendStatus(400) 发送状态码
+  res.send('传统url传递参数！'+req.query.id)
+})
+
+app.get("/books/:id",(req,res)=>{
+  // res.send("<h1>Hello World</h1>") 发送HTML
+  // res.send({mag:"Hello World"}) 发送json格式数据
+  // res.json({success:true}) 发送json格式数据
+  // res.sendStatus(400) 发送状态码
+  res.send('Restful传递参数！'+req.params.id)
+})
+
 app.get("/tom",(req,res)=>{
   // res.send("<h1>Hello World</h1>") 发送HTML
   // res.send({mag:"Hello World"}) 发送json格式数据
@@ -94,6 +126,14 @@ app.get("/data",(req,res)=>{
 })
 
 
+app.post('/books',(req,res) =>{
+	res.send(`post传递参数`+req.body.name+' '+req.body.pwd)
+})
+
+
+app.put('/books/:id',(req,res) =>{
+	res.send(`put传递参数`+req.params.id+'--'+req.body.name+' '+req.body.pwd)
+})
 
 
 
@@ -104,6 +144,8 @@ app.get("/api/:id",(req,res)=>{
 // http://localhost:5000/api
 app.post("/api",(req,res)=>{
   res.status(200).json({success:true,msg:`创建新的数据`})
+  
+  //res.send(`123`)
 })
 // http://localhost:5000/api:id
 app.put("/api/:id",(req,res)=>{

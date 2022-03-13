@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script>
+        Vue.config.devtools = true
+
+        kk = 1
+        gg = !kk
+            //fetch api基本用法
+
+        if (gg) {
+            // 传统方式，传统url
+            fetch('http://localhost:5000/books?id=123', {
+                method: 'get'
+            }).then(function(data) {
+
+                // 用于获取后台返回的数据，需要return让下一个then处理
+                return data.text()
+            }).then(function(data) {
+                console.log(data)
+            })
+        }
+
+
+        if (gg) {
+            // restful url传参
+            fetch('http://localhost:5000/books/456', {
+                // 默认get
+                method: 'get'
+            }).then(function(data) {
+
+                // 用于获取后台返回的数据，需要return让下一个then处理
+                return data.text()
+            }).then(function(data) {
+                console.log(data)
+            })
+        }
+        console.log(gg)
+
+        //delete
+
+        if (kk) {
+            // restful url传参
+            fetch('http://localhost:5000/api/789', {
+                // 默认get
+                method: 'delete'
+            }).then(function(data) {
+
+                // 用于获取后台返回的数据，需要return让下一个then处理
+                return data.text()
+            }).then(function(data) {
+                console.log(data)
+            })
+        }
+    </script>
+</body>
+
+</html>
