@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script>
+        // 返回值可以是promise实例对象，也可以返回普通值
+        Vue.config.devtools = true
+
+        console.dir(Promise)
+            // 基于promise发起ajax请求
+
+        function queryData(url) {
+            return new Promise(function(resolve, reject) {
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState != 4) return
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        // 处理正常的情况，返回给resolve
+                        resolve(xhr.responseText);
+                    } else {
+                        // 异常情况，调用reject
+                        reject('服务器错误')
+                    }
+                };
+                xhr.open('get', url);
+                xhr.send(null)
+            })
+        }
+
+        var p1 = queryData('http://localhost:5000/delay1')
+        var p2 = queryData('http://localhost:5000/delay2')
+        var p3 = queryData('http://localhost:5000/delay3')
+
+        // 都是并发处理异步任务
+        // Promise.all 所有任务完成后得到最终结果
+        if (0) {
+            Promise.all([p1, p2, p3]).then(function(res) {
+                console.log(res)
+            })
+        }
+        //Promise.race 有一个返回即执行，其他任务不会终止
+        Promise.race([p1, p2, p3]).then(function(res) {
+            console.log(res)
+        })
+    </script>
+</body>
+
+</html>

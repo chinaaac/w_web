@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+
+        <base-layout>
+            <!-- slot名称要和子组件名称一致才能放到对应插槽位置 -->
+            <p slot="header">标题信息</p>
+            <p>主要内容</p>
+            <p>主要内容</p>
+            <p slot="footer">底部信息</p>
+        </base-layout>
+
+
+        <base-layout>
+
+            <!-- 这里我失败了 -->
+            <template v-slot:header>
+            <p>标题信息1</p>
+            <p>标题信息1</p>
+            <p>标题信息1</p>
+            <p>标题信息1</p>
+         </template> 123
+            <template v-slot:footer>
+            <p >底部信息2</p>
+            <p >底部信息2</p>
+            <p >底部信息2</p>
+     </template>
+        </base-layout>
+        <base-layout>
+            <!-- slot名称要和子组件名称一致才能放到对应插槽位置 -->
+            <p slot="header ">标题信息0</p>
+            <p>主要内容</p>
+            <p>主要内容</p>
+            <p slot="footer">底部信息</p>
+        </base-layout>
+
+
+
+    </div>
+    <script>
+        Vue.config.devtools = true
+        Vue.component('base-layout', {
+            template: `
+            <div>
+                <header>
+                    <slot name='header'></slot>
+                </header>
+
+                <main>
+                    <slot></slot>
+                </main>
+
+                <footer>
+                    <slot name='footer'></slot>
+                </footer>
+            </div>
+            
+            `
+        })
+        var vm = new Vue({
+            el: '#app ',
+            data: {
+
+            },
+            methods: {
+
+            },
+            computed: {
+
+            },
+            watch: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

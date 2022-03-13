@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>父组件</div>
+        <div>
+            <button @click='handle'>销毁</button>
+        </div>
+        <test-tom></test-tom>
+        <test-jacy></test-jacy>
+    </div>
+
+
+
+    <script>
+        // 兄弟组件数据传递
+
+        // 提供事件中心,给其他组件调用
+
+        var hub = new Vue()
+
+        Vue.config.devtools = true
+        Vue.component('test-tom', {
+            data: function() {
+                return {
+
+                    num: 0
+                }
+            },
+            props: [],
+            template: `
+            <div>
+                <div>tom:{{num}}</div>
+                <div>
+                    <button @click='handle'>点击</button>    
+                </div>
+            </div>
+            `,
+            methods: {
+                handle() {
+                    // 触发兄弟组件的事件
+                    hub.$emit('jacy-event', 1)
+                }
+            },
+            // 挂载完成即监听
+            mounted() {
+                // 监听事件
+                hub.$on('tom-event', (val) => {
+                    this.num += val
+                })
+            }
+        })
+
+        Vue.component('test-jacy', {
+            data: function() {
+                return {
+
+                    num: 0
+                }
+            },
+            props: [],
+            template: `
+            <div>
+                <div>jack:{{num}}</div>
+                <div>
+                    <button @click='handle'>点击</button>
+                </div>
+            </div>
+            `,
+            methods: {
+                handle() {
+                    // 触发兄弟组件的事件
+                    hub.$emit('tom-event', 2)
+                }
+            },
+            mounted() {
+                // 监听事件
+                hub.$on('jacy-event', (val) => {
+                    this.num += val
+                })
+            }
+        })
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            methods: {
+                // 销毁事件
+                handle() {
+                    hub.$off('tom-event')
+                    hub.$off('jacy-event')
+                }
+            },
+            computed: {
+
+            },
+            watch: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

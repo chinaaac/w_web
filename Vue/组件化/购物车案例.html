@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+    <style>
+        .item div {
+            display: inline-block;
+            width: 80px;
+            height: 20px;
+            text-align: center;
+        }
+        
+        a {
+            text-decoration: none;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #ccc;
+        }
+        
+        .item input {
+            width: 20px;
+            position: relative;
+            top: -3px;
+        }
+        
+        body {
+            width: 400px;
+            margin: 0 auto;
+            padding: 0;
+            text-align: center;
+        }
+        
+        .title {
+            background-color: skyblue;
+        }
+        
+        .total {
+            background-color: yellow;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <my-cart></my-cart>
+    </div>
+    <template id="c1">
+        <div class="cart">
+            <cart-title :uname="uname"></cart-title>
+            <cart-list></cart-list>
+            <cart-total></cart-total>
+        </div>
+    </template>
+
+    <template id="title">
+        <div class="title">{{uname}}的商品</div>
+    </template>
+    <template id="list">
+
+        <div class="list">
+            <div class="item">
+                <div>tcl</div>
+                <div class="name"></div>
+                <div class="change">
+                    <a href="">-</a>
+                    <input type="text" class="num">
+                    <a href="">+</a>
+                </div>
+                <div class="del">x</div>
+            </div>
+            <div class="item">
+                <div>tcl</div>
+                <div class="name"></div>
+                <div class="change">
+                    <a href="">-</a>
+                    <input type="text" class="num">
+                    <a href="">+</a>
+                </div>
+                <div class="del">x</div>
+            </div>
+            <div class="item">
+                <div>tcl</div>
+                <div class="name"></div>
+                <div class="change">
+                    <a href="">-</a>
+                    <input type="text" class="num">
+                    <a href="">+</a>
+                </div>
+                <div class="del">x</div>
+            </div>
+        </div>
+    </template>
+    <template id="total">
+    <div class="total">
+        <span>总价：123</span>
+        <button>结算</button>
+    </div>
+            
+    </template>
+    <script>
+        var cartTitle = {
+            props: ['uname'],
+            template: '#title'
+        }
+        var cartList = {
+            template: '#list'
+        }
+        var cartTotal = {
+            template: '#total'
+        }
+        Vue.config.devtools = true
+        Vue.component('my-cart', {
+            data: function() {
+                return {
+                    uname: '陈露'
+                }
+            },
+            template: '#c1',
+            components: {
+                'cart-title': cartTitle,
+                'cart-list': cartList,
+                'cart-total': cartTotal
+            }
+        })
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            methods: {
+
+            },
+            computed: {
+
+            },
+            watch: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>
+
+</html>

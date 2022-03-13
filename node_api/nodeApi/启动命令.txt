@@ -1,0 +1,3 @@
+node server
+
+端口号5000

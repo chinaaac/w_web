@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jq.js"></script>
+</head>
+
+<body>
+    <div>前后端交互</div>
+    <script>
+        //       前后端交互，异步编程与Promise概述
+        var ret = '---'
+        $.ajax({
+            url: 'http://localhost:5000/data',
+            success: function(data) {
+                ret = data
+            }
+        })
+        console.log(ret) //这里值还是---因为异步操作还没有执行完
+
+        if (0) {
+            // 这里输出的顺序和书写不保证完全一致，顺序会错乱
+            $.ajax({
+                url: 'http://localhost:5000/data',
+                success: function(data) {
+                    console.log(data)
+                }
+            })
+            $.ajax({
+                url: 'http://localhost:5000/tom',
+                success: function(data) {
+                    console.log(data)
+                }
+            })
+            $.ajax({
+                url: 'http://localhost:5000/cc',
+                success: function(data) {
+                    console.log(data)
+                }
+            })
+        }
+
+        // 这里我无法操作，没有代码
+
+        // 异步操作ajax 数据无法按书写顺序获得，数据越大，内容越复杂越慢
+
+        // 如何解决？临时解决办法看这个if
+        // 这个办法不好，叫做嵌套地狱
+
+        if (0) {
+            $.ajax({
+                url: 'http://localhost:5000/data',
+                success: function(data) {
+                    console.log(data)
+                    $.ajax({
+                        url: 'http://localhost:5000/tom',
+                        success: function(data) {
+                            console.log(data)
+                            $.ajax({
+                                url: 'http://localhost:5000/cc',
+                                success: function(data) {
+                                    console.log(data)
+                                }
+                            })
+                        }
+                    })
+                }
+            })
+        }
+
+        // 好的解决办法Promise
+        // Promise是异步编程的一种解决方案，从语法上讲，Promise是一个对象,从他可以获得异步操作的消息
+
+        console.log('=================================')
+    </script>
+</body>
+
+</html>
