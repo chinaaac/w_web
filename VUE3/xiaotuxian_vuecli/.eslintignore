@@ -1,0 +1,3 @@
+# 不需要校验eslint的文件
+/dist
+/src/vender
